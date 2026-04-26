@@ -3,35 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Page</title>
+    <title>GuruSathenaeum - English Literary Club</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Top Left Logo -->
+    <div class="logo-container">
+        <img src="logo.png" alt="Club Logo" class="top-left-logo">
+    </div>
+
     <header>
-        <h1>Welcome to Our Event</h1>
-        <!-- Logo has been removed from header -->
+        <h1 class="club-name">GuruSathenaeum</h1>
+        <div class="header-bullets">
+            <p class="encourage-text">Join us and be part of something extraordinary!</p>
+            <ul>
+                <li>Unleash your creativity and share your voice with an appreciative audience.</li>
+                <li>Connect with fellow literature enthusiasts and build a vibrant community.</li>
+                <li>Enhance your public speaking skills and gain confidence on stage.</li>
+                <li>Opportunity to be recognized for your talent and win exciting awards.</li>
+                <li>A platform to transform your thoughts into impactful performances.</li>
+            </ul>
+        </div>
     </header>
-    <section class="hero">
-        <img src="path/to/logo.png" alt="Event Logo" style="display: block; margin: auto;">
-    </section>
-    <section class="bullets">
-        <ul>
-            <li>Express yourself through the power of words</li>
-            <li>Connect with fellow creative minds</li>
-            <li>Showcase your talent and build confidence</li>
-            <li>Win recognition and exciting prizes</li>
-        </ul>
-    </section>
-    <section class="build-confidence">
-        <h2>Build Confidence</h2>
-        <p>Your time to shine! Join us in a supportive environment.</p>
-    </section>
-    <section class="win-recognition">
-        <h2>Win Recognition</h2>
-        <p>Every participant will get a chance to showcase their unique performance.</p>
-    </section>
+
+    <main>
+        <!-- This Week's Events -->
+        <section id="weekly-events">
+            <h2 class="section-title">This Week's Events</h2>
+            <div class="events-container">
+                <!-- Poetry Recitation Column -->
+                <div class="event-card">
+                    <h3 class="event-type">Poetry Recitation</h3>
+                    <div class="event-details">
+                        <p><strong>Date:</strong> May 28, 2026</p>
+                        <p><strong>Time:</strong> 10:00 AM to 11:00 AM</p>
+                    </div>
+                    <div class="rules-section">
+                        <h4>Rules and Regulations:</h4>
+                        <ul>
+                            <li>Each participant will be given 2–3 minutes to recite their poem.</li>
+                            <li>Poems can be self-written or from reputed sources (author credit must be mentioned).</li>
+                            <li>Emphasis will be on pronunciation, expression, confidence, and clarity.</li>
+                            <li>Participants should avoid offensive or inappropriate content.</li>
+                        </ul>
+                    </div>
+                    <div class="registration-area">
+                        <p>Ready to Showcase Your Poetry?</p>
+                        <a href="#" class="reg-button">Register Now</a>
+                    </div>
+                </div>
+
+                <!-- Documentation Column -->
+                <div class="event-card">
+                    <h3 class="event-type">Documentation</h3>
+                    <div class="event-details">
+                        <p><strong>Date:</strong> May 28, 2026</p>
+                        <p><strong>Time:</strong> 11:00 AM to 12:00 PM</p>
+                    </div>
+                    <div class="rules-section">
+                        <h4>Rules and Regulations:</h4>
+                        <ol>
+                            <li>All participants should register their names before the event.</li>
+                            <li>Participants must report to the venue 15 minutes before the scheduled time.</li>
+                            <li>The documentation topic should be relevant, creative, and original.</li>
+                            <li>The documentation video should exceed 3 minutes and must be clear, creative, and well-presented.</li>
+                            <li>The voice-over for the documentation video must be in English only.</li>
+                            <li>Any copied content from books, internet, or other sources will not be accepted.</li>
+                            <li>Participants should maintain discipline and follow instructions.</li>
+                            <li>Judges’ decision will be final.</li>
+                        </ol>
+                    </div>
+                    <div class="registration-area">
+                        <p>Ready to Showcase Your Documentation?</p>
+                        <a href="#" class="reg-button">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recognition & Confidence -->
+        <section class="info-grid">
+            <div class="info-card">
+                <h2>Build Confidence</h2>
+                <p>Your time to shine! Join us in a supportive environment designed to help you grow and excel.</p>
+            </div>
+            <div class="info-card">
+                <h2>Win Recognition</h2>
+                <p>Every participant will get a chance to showcase their unique performance and earn the recognition they deserve.</p>
+            </div>
+        </section>
+
+        <!-- Weekly Event Winners List -->
+        <section id="winners">
+            <h2 class="section-title">Weekly Event Winners List</h2>
+            <div class="winners-table-container">
+                <table class="winners-table">
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>1st Place</th>
+                            <th>2nd Place</th>
+                            <th>3rd Place</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Poetry Recitation</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Documentation</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <h2 class="section-title">Event Gallery</h2>
+            <div class="gallery-wrapper">
+                <div class="gallery-track">
+                    <div class="gallery-item"><img src="gallery1.jpg" alt="Gallery 1"></div>
+                    <div class="gallery-item"><img src="gallery2.jpg" alt="Gallery 2"></div>
+                    <div class="gallery-item"><img src="gallery3.jpg" alt="Gallery 3"></div>
+                    <div class="gallery-item"><img src="gallery4.jpg" alt="Gallery 4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Dr. K Muthulakshmi</h3>
+                    <p class="role">Head of Club</p>
+                    <p>Phone: 8838412831</p>
+                    <p>Email: </p>
+                </div>
+                <div class="contact-card">
+                    <h3>N. Saideepthi</h3>
+                    <p class="role">President</p>
+                    <p>Phone: 9908608382</p>
+                    <p>Email: saideepthinagoju@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                    <h3>M. Harshavardhan</h3>
+                    <p class="role">Technical Support</p>
+                    <p>Phone: 9014248652</p>
+                    <p>Email: mharshavardhan075@gmail.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>Contact us at info@example.com</p>
+        <p>&copy; 2026 GuruSathenaeum. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
