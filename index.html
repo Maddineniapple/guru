@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Literary Club - Guru Nanak Institutions</title>
+    <title>Guru's Athenaeum - English Literary Club</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -88,24 +88,42 @@
 
         /* Hero Section */
         .hero {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
         }
 
-        .hero-department {
+        .institution-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .department-title {
             font-size: 1.3rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--accent-blue);
+            color: #FFD700;
             margin-bottom: 1.5rem;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+        }
+
+        .club-subtitle {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
             margin-bottom: 2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         .hero-slogans {
@@ -381,6 +399,30 @@
             font-size: 0.8rem;
             color: #888;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .club-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .institution-title {
+                font-size: 0.9rem;
+            }
+
+            .department-title {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -400,11 +442,19 @@
 
     <main>
         <section class="hero container">
-            <div class="hero-department">
-                Humanities and Science Department
+            <div class="institution-title">
+                Guru Nanak Institutions Technical Campus
             </div>
             
-            <h1>GURU'S ATHENAEUM 25-26</h1>
+            <div class="department-title">
+                Department of Humanities and Sciences
+            </div>
+
+            <h1>GURU'S ATHENAEUM 26-26</h1>
+
+            <div class="club-subtitle">
+                English Literary Club
+            </div>
             
             <div class="hero-slogans">
                 <p>* A drop of link may make a million think .</p>
@@ -564,7 +614,7 @@
             <div class="footer-members">
                 <h3>Club Members</h3>
                 <div class="member">
-                    <strong>coordinator:</strong> Dr. K Muthulakshmi<br>
+                    <strong>Coordinator:</strong> Dr. K Muthulakshmi<br>
                     Phone: 8838412831
                 </div>
                 <div class="member">
@@ -582,7 +632,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 GURU'S ATHENAEUM 25-26. Guru Nanak Institutions. All rights reserved.</p>
+            <p>&copy; 2026 GURU'S ATHENAEUM 26-26. Guru Nanak Institutions. All rights reserved.</p>
         </div>
     </footer>
 
@@ -602,7 +652,7 @@
                         
                         if (targetElement) {
                             window.scrollTo({
-                                top: targetElement.offsetTop - 80, // Adjust for sticky header
+                                top: targetElement.offsetTop - 80,
                                 behavior: 'smooth'
                             });
                         }
