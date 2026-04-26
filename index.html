@@ -4,8 +4,384 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Literary Club - Guru Nanak Institutions</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a5490;
+            --dark-blue: #0d2d4a;
+            --light-blue: #e3f2fd;
+            --accent-blue: #2196F3;
+            --light-bg: #f0f4f8;
+            --text-dark: #333;
+            --text-light: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--primary-blue);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+        }
+
+        .hero-department {
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-slogans {
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .hero-slogans p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .hero-slogans .highlight {
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark-blue);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(26, 84, 144, 0.2);
+        }
+
+        .benefit-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Events Section */
+        .events {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .events h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark-blue);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 3rem;
+        }
+
+        @media (max-width: 600px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .event-card {
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-header {
+            background: var(--primary-blue);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .event-header h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .event-details {
+            display: flex;
+            justify-content: space-around;
+            padding: 1.5rem;
+            background: var(--light-blue);
+            border-bottom: 1px solid #ddd;
+        }
+
+        .detail-item {
+            text-align: center;
+        }
+
+        .detail-item .label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-item .value {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .rules-section {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+
+        .rules-section h4 {
+            color: var(--dark-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .rules-section ul, .rules-section ol {
+            padding-left: 1.5rem;
+        }
+
+        .rules-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .registration-cta {
+            padding: 2rem;
+            background: var(--light-blue);
+            text-align: center;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: #fff;
+            text-decoration: none;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-blue);
+        }
+
+        /* Winners Section */
+        .winners {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .winners h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark-blue);
+        }
+
+        .winners-table-container {
+            overflow-x: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .winners-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .winners-table th, .winners-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .winners-table th {
+            background: var(--primary-blue);
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark-blue);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: #fff;
+            padding: 4rem 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-grid h3 {
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .member {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,14 +400,19 @@
 
     <main>
         <section class="hero container">
+            <div class="hero-department">
+                Humanities and Science Department
+            </div>
+            
             <h1>GURU'S ATHENAEUM 25-26</h1>
-            <div class="hero-content">
-                <ul class="encouragement-points">
-                    <li>Unlock your creative potential in a supportive environment.</li>
-                    <li>Connect with fellow literature enthusiasts and build a community.</li>
-                    <li>Showcase your unique talents and gain confidence through performance.</li>
-                    <li>Participate in diverse literary events and win exciting recognition.</li>
-                </ul>
+            
+            <div class="hero-slogans">
+                <p>* A drop of link may make a million think .</p>
+                <p>*Embrace Will to Power*</p>
+                <p>Craft your Language, Shape your Future</p>
+                <p>We try We learn We change We grow</p>
+                <p>face the test and give your best</p>
+                <p class="highlight">Guru's Athaeneum - A Platform to *Bring Life to Your Ideas*</p>
             </div>
         </section>
 
@@ -59,77 +440,77 @@
         <section id="events" class="events container">
             <h2>This Week's Events</h2>
             <div class="events-grid">
-<!-- Poetry Recitation Event -->
-<div class="event-card">
-    <div class="event-header">
-        <h3>Poetry Recitation</h3>
-        <p>Express yourself through the power of words</p>
-    </div>
-    <div class="event-details">
-        <div class="detail-item">
-            <span class="label">Date</span>
-            <span class="value">April 28, 2026</span>
-        </div>
-        <div class="detail-item">
-            <span class="label">Time</span>
-            <span class="value">10:00 AM to 11:00 AM</span>
-        </div>
-    </div>
-    <div class="rules-section">
-        <h4>Rules and Regulations</h4>
-        <ul>
-            <li>Each participant will be given 2–3 minutes to recite their poem.</li>
-            <li>Poems can be self-written or from reputed sources (author credit must be mentioned).</li>
-            <li>Emphasis will be on pronunciation, expression, confidence, and clarity.</li>
-            <li>Participants should avoid offensive or inappropriate content.</li>
-        </ul>
-    </div>
-    <div class="registration-cta">
-        <h5>Ready to Showcase Your Poetry?</h5>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBAjDocss-yAHRnvS3F5ptCHwponOtQDfaNlIHoc4HYUrfWg/viewform?usp=publish-editor" 
-           class="btn-primary" target="_blank">
-           Register for the Event
-        </a>
-    </div>
-</div>
+                <!-- Poetry Recitation Event -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3>Poetry Recitation</h3>
+                        <p>Express yourself through the power of words</p>
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <span class="label">Date</span>
+                            <span class="value">April 28, 2026</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Time</span>
+                            <span class="value">10:00 AM to 11:00 AM</span>
+                        </div>
+                    </div>
+                    <div class="rules-section">
+                        <h4>Rules and Regulations</h4>
+                        <ul>
+                            <li>Each participant will be given 2–3 minutes to recite their poem.</li>
+                            <li>Poems can be self-written or from reputed sources (author credit must be mentioned).</li>
+                            <li>Emphasis will be on pronunciation, expression, confidence, and clarity.</li>
+                            <li>Participants should avoid offensive or inappropriate content.</li>
+                        </ul>
+                    </div>
+                    <div class="registration-cta">
+                        <h5>Ready to Showcase Your Poetry?</h5>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBAjDocss-yAHRnvS3F5ptCHwponOtQDfaNlIHoc4HYUrfWg/viewform?usp=publish-editor" 
+                           class="btn-primary" target="_blank">
+                           Register for the Event
+                        </a>
+                    </div>
+                </div>
 
-<!-- Documentation Event -->
-<div class="event-card">
-    <div class="event-header">
-        <h3>Documentation</h3>
-        <p>Showcase your research and presentation skills</p>
-    </div>
-    <div class="event-details">
-        <div class="detail-item">
-            <span class="label">Date</span>
-            <span class="value">April 28, 2026</span>
-        </div>
-        <div class="detail-item">
-            <span class="label">Time</span>
-            <span class="value">11:00 AM to 12:00 PM</span>
-        </div>
-    </div>
-    <div class="rules-section">
-        <h4>Rules and Regulations</h4>
-        <ol>
-            <li>All participants should register their names before the event.</li>
-            <li>Participants must report to the venue 15 minutes before the scheduled time.</li>
-            <li>The documentation topic should be relevant, creative, and original.</li>
-            <li>The documentation video should exceed 3 minutes and must be clear, creative, and well-presented.</li>
-            <li>The voice-over for the documentation video must be in English only.</li>
-            <li>Any copied content from books, internet, or other sources will not be accepted.</li>
-            <li>Participants should maintain discipline and follow the instructions given by the coordinators.</li>
-            <li>Judges’ decision will be final.</li>
-        </ol>
-    </div>
-    <div class="registration-cta">
-        <h5>Ready to Showcase Your Documentation?</h5>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4rikWszhVZd05cDBWAoslR_I45GbiBqfzT2QwdAdzE6HILg/viewform?usp=publish-editor" 
-           class="btn-primary" target="_blank">
-            Register for the Event
-        </a>
-    </div>
-</div>
+                <!-- Documentation Event -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3>Documentation</h3>
+                        <p>Showcase your research and presentation skills</p>
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <span class="label">Date</span>
+                            <span class="value">April 28, 2026</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Time</span>
+                            <span class="value">11:00 AM to 12:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="rules-section">
+                        <h4>Rules and Regulations</h4>
+                        <ol>
+                            <li>All participants should register their names before the event.</li>
+                            <li>Participants must report to the venue 15 minutes before the scheduled time.</li>
+                            <li>The documentation topic should be relevant, creative, and original.</li>
+                            <li>The documentation video should exceed 3 minutes and must be clear, creative, and well-presented.</li>
+                            <li>The voice-over for the documentation video must be in English only.</li>
+                            <li>Any copied content from books, internet, or other sources will not be accepted.</li>
+                            <li>Participants should maintain discipline and follow the instructions given by the coordinators.</li>
+                            <li>Judges' decision will be final.</li>
+                        </ol>
+                    </div>
+                    <div class="registration-cta">
+                        <h5>Ready to Showcase Your Documentation?</h5>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4rikWszhVZd05cDBWAoslR_I45GbiBqfzT2QwdAdzE6HILg/viewform?usp=publish-editor" 
+                           class="btn-primary" target="_blank">
+                            Register for the Event
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -183,8 +564,7 @@
             <div class="footer-members">
                 <h3>Club Members</h3>
                 <div class="member">
-                    <strong>
-coordinator:</strong> Dr. K Muthulakshmi<br>
+                    <strong>coordinator:</strong> Dr. K Muthulakshmi<br>
                     Phone: 8838412831
                 </div>
                 <div class="member">
@@ -206,6 +586,63 @@ coordinator:</strong> Dr. K Muthulakshmi<br>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80, // Adjust for sticky header
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Simple animation on scroll for benefit cards
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            const benefitCards = document.querySelectorAll('.benefit-card');
+            benefitCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease-out';
+                observer.observe(card);
+            });
+
+            // Registration button alert
+            const registerBtns = document.querySelectorAll('.register-btn, .btn-primary');
+            registerBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    if (btn.getAttribute('href') === '#') {
+                        e.preventDefault();
+                        alert('Registration forms will be available soon! Please stay tuned.');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
