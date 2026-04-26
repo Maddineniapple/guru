@@ -3,43 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GuruSathenaeum - English Literary Club</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>English Literary Club - Guru Nanak Institutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Top Left Logo -->
-    <div class="logo-container">
-        <img src="logo.png" alt="Club Logo" class="top-left-logo">
-    </div>
-
     <header>
-        <h1 class="club-name">GuruSathenaeum</h1>
-        <div class="header-bullets">
-            <p class="encourage-text">Join us and be part of something extraordinary!</p>
-            <ul>
-                <li>Unleash your creativity and share your voice with an appreciative audience.</li>
-                <li>Connect with fellow literature enthusiasts and build a vibrant community.</li>
-                <li>Enhance your public speaking skills and gain confidence on stage.</li>
-                <li>Opportunity to be recognized for your talent and win exciting awards.</li>
-                <li>A platform to transform your thoughts into impactful performances.</li>
+        <nav class="container">
+            <div class="logo-container">
+                <img src="logo.jpeg" alt="Guru's Athenaeum Logo" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#events">Events</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#winners">Winners</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
+            <button class="register-btn">Register</button>
+        </nav>
     </header>
 
     <main>
-        <!-- This Week's Events -->
-        <section id="weekly-events">
-            <h2 class="section-title">This Week's Events</h2>
-            <div class="events-container">
-                <!-- Poetry Recitation Column -->
+        <section class="hero container">
+            <h1>GURU'S ATHENAEUM 25-26</h1>
+            <div class="hero-content">
+                <ul class="encouragement-points">
+                    <li>Unlock your creative potential in a supportive environment.</li>
+                    <li>Connect with fellow literature enthusiasts and build a community.</li>
+                    <li>Showcase your unique talents and gain confidence through performance.</li>
+                    <li>Participate in diverse literary events and win exciting recognition.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="benefits" class="benefits container">
+            <h2>Why Join Our Events?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">👥</div>
+                    <h3>Connect & Collaborate</h3>
+                    <p>Meet fellow creative minds, build meaningful connections, and collaborate on exciting literary projects in a supportive community.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">✨</div>
+                    <h3>Build Confidence</h3>
+                    <p>Overcome stage fear. Showcase your talent, receive recognition, and grow as a creative individual.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🏆</div>
+                    <h3>Win Recognition</h3>
+                    <p>Compete for prizes, certificates, and recognition. Every participant is celebrated for their unique performance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="events container">
+            <h2>This Week's Events</h2>
+            <div class="events-grid">
+                <!-- Poetry Recitation Event -->
                 <div class="event-card">
-                    <h3 class="event-type">Poetry Recitation</h3>
+                    <div class="event-header">
+                        <h3>Poetry Recitation</h3>
+                        <p>Express yourself through the power of words</p>
+                    </div>
                     <div class="event-details">
-                        <p><strong>Date:</strong> May 28, 2026</p>
-                        <p><strong>Time:</strong> 10:00 AM to 11:00 AM</p>
+                        <div class="detail-item">
+                            <span class="label">Date</span>
+                            <span class="value">May 28, 2026</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Time</span>
+                            <span class="value">10:00 AM to 11:00 AM</span>
+                        </div>
                     </div>
                     <div class="rules-section">
-                        <h4>Rules and Regulations:</h4>
+                        <h4>Rules and Regulations</h4>
                         <ul>
                             <li>Each participant will be given 2–3 minutes to recite their poem.</li>
                             <li>Poems can be self-written or from reputed sources (author credit must be mentioned).</li>
@@ -47,21 +85,30 @@
                             <li>Participants should avoid offensive or inappropriate content.</li>
                         </ul>
                     </div>
-                    <div class="registration-area">
-                        <p>Ready to Showcase Your Poetry?</p>
-                        <a href="#" class="reg-button">Register Now</a>
+                    <div class="registration-cta">
+                        <h5>Ready to Showcase Your Poetry?</h5>
+                        <a href="#" class="btn-primary">Register for the Event</a>
                     </div>
                 </div>
 
-                <!-- Documentation Column -->
+                <!-- Documentation Event -->
                 <div class="event-card">
-                    <h3 class="event-type">Documentation</h3>
+                    <div class="event-header">
+                        <h3>Documentation</h3>
+                        <p>Showcase your research and presentation skills</p>
+                    </div>
                     <div class="event-details">
-                        <p><strong>Date:</strong> May 28, 2026</p>
-                        <p><strong>Time:</strong> 11:00 AM to 12:00 PM</p>
+                        <div class="detail-item">
+                            <span class="label">Date</span>
+                            <span class="value">May 28, 2026</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Time</span>
+                            <span class="value">11:00 AM to 12:00 PM</span>
+                        </div>
                     </div>
                     <div class="rules-section">
-                        <h4>Rules and Regulations:</h4>
+                        <h4>Rules and Regulations</h4>
                         <ol>
                             <li>All participants should register their names before the event.</li>
                             <li>Participants must report to the venue 15 minutes before the scheduled time.</li>
@@ -69,33 +116,20 @@
                             <li>The documentation video should exceed 3 minutes and must be clear, creative, and well-presented.</li>
                             <li>The voice-over for the documentation video must be in English only.</li>
                             <li>Any copied content from books, internet, or other sources will not be accepted.</li>
-                            <li>Participants should maintain discipline and follow instructions.</li>
+                            <li>Participants should maintain discipline and follow the instructions given by the coordinators.</li>
                             <li>Judges’ decision will be final.</li>
                         </ol>
                     </div>
-                    <div class="registration-area">
-                        <p>Ready to Showcase Your Documentation?</p>
-                        <a href="#" class="reg-button">Register Now</a>
+                    <div class="registration-cta">
+                        <h5>Ready to Showcase Your Documentation?</h5>
+                        <a href="#" class="btn-primary">Register for the Event</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Recognition & Confidence -->
-        <section class="info-grid">
-            <div class="info-card">
-                <h2>Build Confidence</h2>
-                <p>Your time to shine! Join us in a supportive environment designed to help you grow and excel.</p>
-            </div>
-            <div class="info-card">
-                <h2>Win Recognition</h2>
-                <p>Every participant will get a chance to showcase their unique performance and earn the recognition they deserve.</p>
-            </div>
-        </section>
-
-        <!-- Weekly Event Winners List -->
-        <section id="winners">
-            <h2 class="section-title">Weekly Event Winners List</h2>
+        <section id="winners" class="winners container">
+            <h2>Weekly Event Winners List</h2>
             <div class="winners-table-container">
                 <table class="winners-table">
                     <thead>
@@ -109,62 +143,64 @@
                     <tbody>
                         <tr>
                             <td>Poetry Recitation</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td>Priya Sharma</td>
+                            <td>Arjun Patel</td>
+                            <td>Neha Kapoor</td>
                         </tr>
                         <tr>
                             <td>Documentation</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td>Vikram Singh</td>
+                            <td>Ananya Gupta</td>
+                            <td>Rohan Desai</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section id="gallery">
-            <h2 class="section-title">Event Gallery</h2>
-            <div class="gallery-wrapper">
-                <div class="gallery-track">
-                    <div class="gallery-item"><img src="gallery1.jpg" alt="Gallery 1"></div>
-                    <div class="gallery-item"><img src="gallery2.jpg" alt="Gallery 2"></div>
-                    <div class="gallery-item"><img src="gallery3.jpg" alt="Gallery 3"></div>
-                    <div class="gallery-item"><img src="gallery4.jpg" alt="Gallery 4"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>Dr. K Muthulakshmi</h3>
-                    <p class="role">Head of Club</p>
-                    <p>Phone: 8838412831</p>
-                    <p>Email: </p>
-                </div>
-                <div class="contact-card">
-                    <h3>N. Saideepthi</h3>
-                    <p class="role">President</p>
-                    <p>Phone: 9908608382</p>
-                    <p>Email: saideepthinagoju@gmail.com</p>
-                </div>
-                <div class="contact-card">
-                    <h3>M. Harshavardhan</h3>
-                    <p class="role">Technical Support</p>
-                    <p>Phone: 9014248652</p>
-                    <p>Email: mharshavardhan075@gmail.com</p>
-                </div>
+        <section id="gallery" class="gallery container">
+            <h2>Event Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1000" alt="Gallery 1"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=1000" alt="Gallery 2"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=1000" alt="Gallery 3"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=1000" alt="Gallery 4"></div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 GuruSathenaeum. All rights reserved.</p>
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h3>GURU'S ATHENAEUM</h3>
+                <p>A celebration of poetry and creative expression at Guru Nanak Institutions English Literary Club.</p>
+            </div>
+            <div class="footer-members">
+                <h3>Club Members</h3>
+                <div class="member">
+                    <strong>Head of Club:</strong> Dr. K Muthulakshmi<br>
+                    Phone: 8838412831
+                </div>
+                <div class="member">
+                    <strong>President:</strong> N. Saideepthi<br>
+                    Phone: 9908608382<br>
+                    Email: saideepthinagoju@gmail.com
+                </div>
+                <div class="member">
+                    <strong>Technical Support:</strong> M. Harshavardhan<br>
+                    Phone: 9014248652<br>
+                    Email: mharshavardhan075@gmail.com
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <p>Email: </p>
+                <p>Phone: +91 XXXX XXXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GURU'S ATHENAEUM 25-26. Guru Nanak Institutions. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
