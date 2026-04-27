@@ -30,6 +30,7 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: #fff;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5 {
@@ -43,73 +44,63 @@
             padding: 0 2rem;
         }
 
-        /* Header & Nav */
+        /* Header Styling - No Backgrounds, No white space */
         header {
-            background: var(--primary-blue);
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background: transparent;
+            box-shadow: none;
             padding: 1rem 0;
+            position: relative;
+            z-index: 1000;
+            margin-bottom: -130px; /* Overlap with hero to remove top gap */
         }
 
-        nav {
+        .header-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-left, .logo-right {
             display: flex;
-            justify-content: space-between;
             align-items: center;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
+        .logo-left { justify-content: flex-start; }
+        .logo-right { justify-content: flex-end; }
 
-        .logo {
-            height: 80px;
+        .header-logo {
+            height: 110px;
             width: auto;
             object-fit: contain;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-light);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-blue);
+        .header-center-img {
+            width: 100%;
+            height: 110px;
+            object-fit: contain;
         }
 
         /* Hero Section */
         .hero {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem 4rem; /* Adjusted top padding */
             text-align: center;
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-        }
-
-        .institution-title {
-            font-size: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #FFD700;
-            margin-bottom: 1rem;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .department-title {
-            font-size: 1.1rem;
-            font-weight: 400;
+            font-size: 1.2rem;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--navy-blue);
+            color: #fff;
             margin-bottom: 1.5rem;
+            margin-top: 80px; /* Space for header logos */
         }
 
         .hero h1 {
@@ -130,50 +121,16 @@
         .main-slogan {
             font-size: 1.3rem;
             color: #FFD700;
-            margin-bottom: 2rem;
-            font-weight: bold;
-            font-style: italic;
-        }
-
-        .hero-slogans {
-            margin-bottom: 2.5rem;
-            font-style: italic;
-        }
-
-        .hero-slogans p {
-            font-size: 1.1rem;
             margin-bottom: 1rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .hero-slogans .highlight {
             font-weight: bold;
-            color: #FFD700;
+            font-style: italic;
         }
 
         .embrace-slogan {
             font-size: 1.3rem;
             font-weight: bold;
-            color: #00FF00;
-            margin-bottom: 2rem;
-        }
-
-        .shield-logo {
-            width: 150px;
-            height: 150px;
-            margin: 2rem auto;
-            display: block;
-        }
-
-        .btn-primary:disabled {
-            background: #999;
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
-
-        .btn-primary:disabled:hover {
-            background: #999;
+            color: #fff; /* Changed from green to white */
+            margin-bottom: 1.5rem;
         }
 
         /* Benefits Section */
@@ -234,10 +191,18 @@
             gap: 3rem;
         }
 
-        @media (max-width: 600px) {
-            .events-grid {
+        @media (max-width: 768px) {
+            header { margin-bottom: 0; }
+            .header-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
+            .logo-left, .logo-right { justify-content: center; }
+            .header-logo, .header-center-img { height: 70px; }
+            .hero { padding-top: 2rem; min-height: auto; }
+            .department-title { margin-top: 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .events-grid { grid-template-columns: 1fr; }
         }
 
         .event-card {
@@ -465,53 +430,25 @@
             font-size: 0.8rem;
             color: #888;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .club-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .institution-title {
-                font-size: 1.2rem;
-            }
-
-            .department-title {
-                font-size: 0.9rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
-        <nav class="container">
-            <div class="logo-container">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663600812414/eurzjezmozojDUfT.png" alt="Guru Nanak Institutions Logo" class="logo">
+        <div class="container header-grid">
+            <div class="logo-left">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663596859077/MifRLgcaCSCemyTQ.png" alt="College Logo" class="header-logo">
             </div>
-            <ul class="nav-links">
-                <li><a href="#events">Events</a></li>
-                <li><a href="#benefits">Benefits</a></li>
-                <li><a href="#winners">Winners</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+            <div class="logo-center">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663596859077/VHuFLOHuGfHyXlCb.png" alt="College Name and Affiliations" class="header-center-img">
+            </div>
+            <div class="logo-right">
+                <img src="https://res.cloudinary.com/dysrmfhoa/image/upload/v1777184461/guru_athenaeum_n1i2hp.jpg" alt="Athenaeum Logo" class="header-logo">
+            </div>
+        </div>
     </header>
 
     <main>
         <section class="hero container">
-            <div class="institution-title">
-                Guru Nanak Institutions Technical Campus
-            </div>
-            
             <div class="department-title">
                 Department of Humanities and Sciences
             </div>
@@ -526,11 +463,11 @@
                 Guru's Athenaeum - A Platform to Bring Life to Your Ideas
             </div>
             
-            <div class="hero-slogans">
-                <p class="embrace-slogan">Embrace Will to Power</p>
+            <div class="embrace-slogan">
+                Embrace Will to Power
             </div>
-
-            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663600812414/OZYwEbcWbXUrQCzs.jpeg" alt="Guru's Athenaeum Shield" class="shield-logo">
+            
+            <!-- Blurry logo removed from here as requested -->
         </section>
 
         <section id="benefits" class="benefits container">
@@ -557,7 +494,6 @@
         <section id="events" class="events container">
             <h2>This Week's Events</h2>
             <div class="events-grid">
-                <!-- Poetry Recitation Event -->
                 <div class="event-card">
                     <div class="event-header">
                         <h3>Poetry Recitation</h3>
@@ -595,7 +531,6 @@
                     </div>
                 </div>
 
-                <!-- Documentation Event -->
                 <div class="event-card">
                     <div class="event-header">
                         <h3>Documentation</h3>
@@ -724,18 +659,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Smooth scrolling for navigation links
             const navLinks = document.querySelectorAll('nav a');
-            
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     const href = link.getAttribute('href');
-                    
                     if (href.startsWith('#')) {
                         e.preventDefault();
                         const targetId = href.substring(1);
                         const targetElement = document.getElementById(targetId);
-                        
                         if (targetElement) {
                             window.scrollTo({
                                 top: targetElement.offsetTop - 80,
@@ -746,11 +677,7 @@
                 });
             });
 
-            // Simple animation on scroll for benefit cards
-            const observerOptions = {
-                threshold: 0.1
-            };
-
+            const observerOptions = { threshold: 0.1 };
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -768,18 +695,6 @@
                 observer.observe(card);
             });
 
-            // Registration button alert
-            const registerBtns = document.querySelectorAll('.register-btn, .btn-primary');
-            registerBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    if (btn.getAttribute('href') === '#') {
-                        e.preventDefault();
-                        alert('Registration forms will be available soon! Please stay tuned.');
-                    }
-                });
-            });
-
-            // Countdown Timer
             function updateCountdownTimer() {
                 const now = new Date();
                 const midnight = new Date();
@@ -795,17 +710,11 @@
                     const timer2 = document.getElementById('timer2');
                     if (timer1) timer1.textContent = timeString;
                     if (timer2) timer2.textContent = timeString;
-                    registerButtons.forEach(btn => {
-                        btn.disabled = false;
-                    });
                 } else {
                     const timer1 = document.getElementById('timer1');
                     const timer2 = document.getElementById('timer2');
                     if (timer1) timer1.textContent = 'Registration Closed';
                     if (timer2) timer2.textContent = 'Registration Closed';
-                    registerButtons.forEach(btn => {
-                        btn.disabled = true;
-                    });
                 }
             }
             updateCountdownTimer();
