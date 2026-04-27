@@ -159,6 +159,23 @@
             margin-bottom: 2rem;
         }
 
+        .shield-logo {
+            width: 150px;
+            height: 150px;
+            margin: 2rem auto;
+            display: block;
+        }
+
+        .btn-primary:disabled {
+            background: #999;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .btn-primary:disabled:hover {
+            background: #999;
+        }
+
         /* Benefits Section */
         .benefits {
             padding: 5rem 2rem;
@@ -512,6 +529,8 @@
             <div class="hero-slogans">
                 <p class="embrace-slogan">Embrace Will to Power</p>
             </div>
+
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663600812414/OZYwEbcWbXUrQCzs.jpeg" alt="Guru's Athenaeum Shield" class="shield-logo">
         </section>
 
         <section id="benefits" class="benefits container">
@@ -766,6 +785,7 @@
                 const midnight = new Date();
                 midnight.setHours(24, 0, 0, 0);
                 const timeRemaining = midnight - now;
+                const registerButtons = document.querySelectorAll('.btn-primary');
                 if (timeRemaining > 0) {
                     const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
                     const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
@@ -775,11 +795,17 @@
                     const timer2 = document.getElementById('timer2');
                     if (timer1) timer1.textContent = timeString;
                     if (timer2) timer2.textContent = timeString;
+                    registerButtons.forEach(btn => {
+                        btn.disabled = false;
+                    });
                 } else {
                     const timer1 = document.getElementById('timer1');
                     const timer2 = document.getElementById('timer2');
                     if (timer1) timer1.textContent = 'Registration Closed';
                     if (timer2) timer2.textContent = 'Registration Closed';
+                    registerButtons.forEach(btn => {
+                        btn.disabled = true;
+                    });
                 }
             }
             updateCountdownTimer();
