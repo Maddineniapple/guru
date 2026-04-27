@@ -65,7 +65,7 @@
         }
 
         .logo {
-            height: 60px;
+            height: 80px;
             width: auto;
             object-fit: contain;
         }
@@ -294,6 +294,23 @@
             text-align: center;
         }
 
+        .countdown-timer {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .timer-display {
+            font-size: 1.3rem;
+            color: #d32f2f;
+            margin-top: 0.5rem;
+            font-weight: 900;
+        }
+
         .btn-primary {
             display: inline-block;
             background: var(--primary-blue);
@@ -461,7 +478,7 @@
     <header>
         <nav class="container">
             <div class="logo-container">
-                <img src="https://res.cloudinary.com/dysrmfhoa/image/upload/v1777276012/gni_logo.webp_g7pxq2.png">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663600812414/eurzjezmozojDUfT.png" alt="Guru Nanak Institutions Logo" class="logo">
             </div>
             <ul class="nav-links">
                 <li><a href="#events">Events</a></li>
@@ -482,7 +499,7 @@
                 Department of Humanities and Sciences
             </div>
 
-            <h1>GURU'S ATHENAEUM 25-26</h1>
+            <h1>GURU'S ATHENAEUM 26-26</h1>
 
             <div class="club-subtitle">
                 English Literary Club
@@ -552,6 +569,10 @@
                            class="btn-primary" target="_blank">
                            Register for the Event
                         </a>
+                        <div class="countdown-timer">
+                            <p>Registration closes in:</p>
+                            <div class="timer-display" id="timer1">00:00:00</div>
+                        </div>
                     </div>
                 </div>
 
@@ -590,6 +611,10 @@
                            class="btn-primary" target="_blank">
                             Register for the Event
                         </a>
+                        <div class="countdown-timer">
+                            <p>Registration closes in:</p>
+                            <div class="timer-display" id="timer2">00:00:00</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -734,8 +759,32 @@
                     }
                 });
             });
+
+            // Countdown Timer
+            function updateCountdownTimer() {
+                const now = new Date();
+                const midnight = new Date();
+                midnight.setHours(24, 0, 0, 0);
+                const timeRemaining = midnight - now;
+                if (timeRemaining > 0) {
+                    const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+                    const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
+                    const seconds = Math.floor((timeRemaining / 1000) % 60);
+                    const timeString = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+                    const timer1 = document.getElementById('timer1');
+                    const timer2 = document.getElementById('timer2');
+                    if (timer1) timer1.textContent = timeString;
+                    if (timer2) timer2.textContent = timeString;
+                } else {
+                    const timer1 = document.getElementById('timer1');
+                    const timer2 = document.getElementById('timer2');
+                    if (timer1) timer1.textContent = 'Registration Closed';
+                    if (timer2) timer2.textContent = 'Registration Closed';
+                }
+            }
+            updateCountdownTimer();
+            setInterval(updateCountdownTimer, 1000);
         });
     </script>
 </body>
 </html>
-
