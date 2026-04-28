@@ -44,12 +44,11 @@
             padding: 0 2rem;
         }
 
-        /* Header Styling - Completely transparent, no white strip */
         header {
             background: transparent;
             box-shadow: none;
             padding: 1rem 0;
-            position: absolute; /* Absolute positioning to float over hero without space */
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -83,9 +82,8 @@
             object-fit: contain;
         }
 
-        /* Hero Section - Solid Blue Background, no white strip */
         .hero {
-            padding: 10rem 2rem 4rem; /* Increased top padding for header space */
+            padding: 10rem 2rem 4rem;
             text-align: center;
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
             min-height: 500px;
@@ -114,7 +112,7 @@
 
         .club-subtitle {
             font-size: 1.5rem;
-            color: #fff; /* Changed from accent-blue to white as requested */
+            color: #fff;
             margin-bottom: 1rem;
             font-weight: 600;
             letter-spacing: 1px;
@@ -135,7 +133,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Benefits Section - Blue Background */
         .benefits {
             padding: 5rem 2rem;
             background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
@@ -181,7 +178,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Events Section */
         .events {
             padding: 5rem 2rem;
             background: #fff;
@@ -291,7 +287,7 @@
             border-radius: 8px;
             font-size: 1.1rem;
             font-weight: bold;
-            color: var(--primary-blue);
+            color: #d32f2f;
         }
 
         .timer-display {
@@ -303,7 +299,7 @@
 
         .btn-primary {
             display: inline-block;
-            background: var(--primary-blue);
+            background: #666;
             color: #fff;
             text-decoration: none;
             padding: 0.75rem 2rem;
@@ -311,13 +307,14 @@
             font-weight: 600;
             margin-top: 1rem;
             transition: var(--transition);
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary:hover {
-            background: var(--dark-blue);
+            background: #444;
         }
 
-        /* Winners Section */
         .winners {
             padding: 5rem 2rem;
             background: var(--light-bg);
@@ -370,7 +367,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Gallery Section */
         .gallery {
             padding: 5rem 2rem;
             background: #fff;
@@ -407,7 +403,6 @@
             transform: scale(1.1);
         }
 
-        /* Footer */
         footer {
             background: var(--dark-blue);
             color: #fff;
@@ -530,13 +525,12 @@
                     </div>
                     <div class="registration-cta">
                         <h5>Ready to Showcase Your Poetry?</h5>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBAjDocss-yAHRnvS3F5ptCHwponOtQDfaNlIHoc4HYUrfWg/viewform?usp=publish-editor" 
-                           class="btn-primary" target="_blank">
+                        <button class="btn-primary" onclick="alert('Registrations are closed')">
                            Register for the Event
-                        </a>
+                        </button>
                         <div class="countdown-timer">
-                            <p>Registration closes in:</p>
-                            <div class="timer-display" id="timer1">00:00:00</div>
+                            <p>Status:</p>
+                            <div class="timer-display">REGISTRATIONS CLOSED</div>
                         </div>
                     </div>
                 </div>
@@ -571,13 +565,12 @@
                     </div>
                     <div class="registration-cta">
                         <h5>Ready to Showcase Your Documentation?</h5>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4rikWszhVZd05cDBWAoslR_I45GbiBqfzT2QwdAdzE6HILg/viewform?usp=publish-editor" 
-                           class="btn-primary" target="_blank">
+                        <button class="btn-primary" onclick="alert('Registrations are closed')">
                             Register for the Event
-                        </a>
+                        </button>
                         <div class="countdown-timer">
-                            <p>Registration closes in:</p>
-                            <div class="timer-display" id="timer2">00:00:00</div>
+                            <p>Status:</p>
+                            <div class="timer-display">REGISTRATIONS CLOSED</div>
                         </div>
                     </div>
                 </div>
@@ -663,32 +656,9 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 GURU'S ATHENAEUM 26-26. Guru Nanak Institutions. All rights reserved.</p>
+            <p>&copy; 2026 GURU'S ATHENAEUM 25-26. Guru Nanak Institutions. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function updateCountdownTimer() {
-                const now = new Date();
-                const midnight = new Date();
-                midnight.setHours(24, 0, 0, 0);
-                const timeRemaining = midnight - now;
-                if (timeRemaining > 0) {
-                    const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
-                    const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
-                    const seconds = Math.floor((timeRemaining / 1000) % 60);
-                    const timeString = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
-                    const timer1 = document.getElementById('timer1');
-                    const timer2 = document.getElementById('timer2');
-                    if (timer1) timer1.textContent = timeString;
-                    if (timer2) timer2.textContent = timeString;
-                }
-            }
-            updateCountdownTimer();
-            setInterval(updateCountdownTimer, 1000);
-        });
-    </script>
 </body>
 </html>
 
