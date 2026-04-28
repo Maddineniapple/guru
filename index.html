@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -299,7 +299,7 @@
 
         .btn-primary {
             display: inline-block;
-            background: #666;
+            background: var(--primary-blue);
             color: #fff;
             text-decoration: none;
             padding: 0.75rem 2rem;
@@ -312,7 +312,12 @@
         }
 
         .btn-primary:hover {
-            background: #444;
+            background: var(--dark-blue);
+        }
+
+        .btn-primary:disabled {
+            background: #666;
+            cursor: not-allowed;
         }
 
         .winners {
@@ -499,6 +504,44 @@
         <section id="events" class="events container">
             <h2>This Week's Events</h2>
             <div class="events-grid">
+                <!-- Art from Waste Event -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3>Art from Waste</h3>
+                        <p>Unleash your creativity with sustainable materials</p>
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <span class="label">Date</span>
+                            <span class="value">30 April 2026</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Time</span>
+                            <span class="value">10:00 AM to 1:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="rules-section">
+                        <h4>Rules and Regulations</h4>
+                        <ol>
+                            <li>Participants in teams (max 2–3 members).</li>
+                            <li>Message (eco-friendly / sustainability theme).</li>
+                            <li>At least 70–90% of the material should be waste items.</li>
+                            <li>Participants must bring their own materials.</li>
+                            <li>The model must be original and innovative.</li>
+                        </ol>
+                    </div>
+                    <div class="registration-cta">
+                        <h5>Ready to Showcase Your Art?</h5>
+                        <a id="reg-link" href="https://docs.google.com/forms/d/e/1FAIpQLSd0nNwhd7Y2bLS0EYf1XNmVwQj3OgBcQNrrOBtcAFhg4mlMLw/viewform?usp=header" target="_blank" class="btn-primary">
+                           Register for the Event
+                        </a>
+                        <div class="countdown-timer">
+                            <p>Registration Closes In:</p>
+                            <div id="timer" class="timer-display">Loading...</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="event-card">
                     <div class="event-header">
                         <h3>Poetry Recitation</h3>
@@ -525,7 +568,7 @@
                     </div>
                     <div class="registration-cta">
                         <h5>Ready to Showcase Your Poetry?</h5>
-                        <button class="btn-primary" onclick="alert('Registrations are closed')">
+                        <button class="btn-primary" disabled>
                            Register for the Event
                         </button>
                         <div class="countdown-timer">
@@ -565,100 +608,8 @@
                     </div>
                     <div class="registration-cta">
                         <h5>Ready to Showcase Your Documentation?</h5>
-                        <button class="btn-primary" onclick="alert('Registrations are closed')">
+                        <button class="btn-primary" disabled>
                             Register for the Event
                         </button>
-                        <div class="countdown-timer">
-                            <p>Status:</p>
-                            <div class="timer-display">REGISTRATIONS CLOSED</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="winners" class="winners container">
-            <h2>Weekly Event Winners List</h2>
-            <div class="winners-table-container">
-                <table class="winners-table">
-                    <thead>
-                        <tr>
-                            <th>Event</th>
-                            <th>1st Place</th>
-                            <th>2nd Place</th>
-                            <th>3rd Place</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Poetry Recitation</td>
-                            <td>       </td>
-                            <td>       </td>
-                            <td>       </td>
-                        </tr>
-                        <tr>
-                            <td>Documentation</td>
-                            <td>      </td>
-                            <td>      </td>
-                            <td>      </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="valedictory-note">
-                <p>The winners shall be formally honoured and awarded prizes at the Valedictory Session, convened upon the successful culmination of the three-week literary event series.</p>
-            </div>
-        </section>
-
-        <section id="gallery" class="gallery container">
-            <h2>Event Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1000" alt="Gallery 1"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=1000" alt="Gallery 2"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=1000" alt="Gallery 3"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=1000" alt="Gallery 4"></div>
-            </div>
-        </section>
-    </main>
-
-    <footer id="contact">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <h3>GURU'S ATHENAEUM</h3>
-                <p>A celebration of poetry and creative expression at Guru Nanak Institutions English Literary Club.</p>
-            </div>
-            <div class="footer-members">
-                <h3>Club Members</h3>
-                <div class="member">
-                    <strong>Coordinator:</strong> Dr. K Muthulakshmi<br>
-                    Phone: 8838412831
-                </div>
-                <div class="member">
-                    <strong>President:</strong> N. Saideepthi<br>
-                    Phone: 9908608382<br>
-                </div>
-                <div class="member">
-                    <strong>Vice President:</strong> S. Charan Tej<br>
-                    Phone: 9346335136<br>
-                </div>
-                <div class="member">
-                    <strong>Secretary:</strong> Racharla Sumedha Sree<br>
-                    Phone: 7382309430<br>
-                </div>
-                <div class="member">
-                    <strong>Technical Support:</strong> M. Harshavardhan<br>
-                    Phone: 9014248652<br>
-                </div>
-            </div>
-            <div class="footer-contact">
-                <h3>Get in Touch</h3>
-                <p>Email: gurus.athenaeum@gmail.com </p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 GURU'S ATHENAEUM 25-26. Guru Nanak Institutions. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+                        <div cla
 
