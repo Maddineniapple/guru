@@ -44,6 +44,7 @@
             padding: 0 2rem;
         }
 
+        /* Header Styling */
         header {
             background: transparent;
             box-shadow: none;
@@ -82,6 +83,7 @@
             object-fit: contain;
         }
 
+        /* Hero Section */
         .hero {
             padding: 10rem 2rem 4rem;
             text-align: center;
@@ -133,6 +135,7 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Benefits Section */
         .benefits {
             padding: 5rem 2rem;
             background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
@@ -178,6 +181,7 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Events Section */
         .events {
             padding: 5rem 2rem;
             background: #fff;
@@ -287,7 +291,7 @@
             border-radius: 8px;
             font-size: 1.1rem;
             font-weight: bold;
-            color: #d32f2f;
+            color: var(--primary-blue);
         }
 
         .timer-display {
@@ -299,7 +303,7 @@
 
         .btn-primary {
             display: inline-block;
-            background: #666;
+            background: var(--primary-blue);
             color: #fff;
             text-decoration: none;
             padding: 0.75rem 2rem;
@@ -307,14 +311,19 @@
             font-weight: 600;
             margin-top: 1rem;
             transition: var(--transition);
-            cursor: pointer;
-            border: none;
         }
 
         .btn-primary:hover {
-            background: #444;
+            background: var(--dark-blue);
         }
 
+        .btn-primary.disabled {
+            background: #666;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Winners Section */
         .winners {
             padding: 5rem 2rem;
             background: var(--light-bg);
@@ -367,6 +376,7 @@
             font-family: 'Playfair Display', serif;
         }
 
+        /* Gallery Section */
         .gallery {
             padding: 5rem 2rem;
             background: #fff;
@@ -403,6 +413,7 @@
             transform: scale(1.1);
         }
 
+        /* Footer */
         footer {
             background: var(--dark-blue);
             color: #fff;
@@ -499,78 +510,86 @@
         <section id="events" class="events container">
             <h2>This Week's Events</h2>
             <div class="events-grid">
+                <!-- EVENT 1: Art from Waste -->
                 <div class="event-card">
                     <div class="event-header">
-                        <h3>Poetry Recitation</h3>
-                        <p>Express yourself through the power of words</p>
+                        <h3>Art from Waste</h3>
+                        <p>Eco-friendly innovation at its best</p>
                     </div>
                     <div class="event-details">
                         <div class="detail-item">
                             <span class="label">Date</span>
-                            <span class="value">April 28, 2026</span>
+                            <span class="value">30 April 2026</span>
                         </div>
                         <div class="detail-item">
                             <span class="label">Time</span>
-                            <span class="value">10:00 AM to 11:00 AM</span>
+                            <span class="value">1:00 PM to 3:00 pm</span>
                         </div>
                     </div>
                     <div class="rules-section">
                         <h4>Rules and Regulations</h4>
                         <ul>
-                            <li>Each participant will be given 2–3 minutes to recite their poem.</li>
-                            <li>Poems can be self-written or from reputed sources (author credit must be mentioned).</li>
-                            <li>Emphasis will be on pronunciation, expression, confidence, and clarity.</li>
-                            <li>Participants should avoid offensive or inappropriate content.</li>
+                            <li>Participants in teams (max 2–3 members).</li>
+                            <li>Theme: Eco-friendly / Sustainability message.</li>
+                            <li>At least 70–90% of the material should be waste items.</li>
+                            <li>Participants must bring their own materials.</li>
+                            <li>The model must be original and innovative.</li>
                         </ul>
                     </div>
                     <div class="registration-cta">
-                        <h5>Ready to Showcase Your Poetry?</h5>
-                        <button class="btn-primary" onclick="alert('Registrations are closed')">
+                        <h5 id="cta-text1">Ready to Showcase Your Creativity?</h5>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0nNwhd7Y2bLS0EYf1XNmVwQj3OgBcQNrrOBtcAFhg4mlMLw/viewform?usp=header" 
+                           class="btn-primary" target="_blank" id="reg-btn1">
                            Register for the Event
-                        </button>
+                        </a>
                         <div class="countdown-timer">
-                            <p>Status:</p>
-                            <div class="timer-display">REGISTRATIONS CLOSED</div>
+                            <p id="timer-label1">Registration closes in:</p>
+                            <div class="timer-display" id="timer1">00:00:00</div>
                         </div>
                     </div>
                 </div>
 
+                <!-- EVENT 2: Model Making -->
                 <div class="event-card">
                     <div class="event-header">
-                        <h3>Documentation</h3>
-                        <p>Showcase your research and presentation skills</p>
+                        <h3>Model Making</h3>
+                        <p>Bring your structural visions to life</p>
                     </div>
                     <div class="event-details">
                         <div class="detail-item">
                             <span class="label">Date</span>
-                            <span class="value">April 28, 2026</span>
+                            <span class="value">30 April 2026</span>
                         </div>
                         <div class="detail-item">
                             <span class="label">Time</span>
-                            <span class="value">11:00 AM to 12:00 PM</span>
+                            <span class="value"> 1:00 PM to 3:00 pm</span>
                         </div>
                     </div>
                     <div class="rules-section">
                         <h4>Rules and Regulations</h4>
                         <ol>
-                            <li>All participants should register their names before the event.</li>
-                            <li>Participants must report to the venue 15 minutes before the scheduled time.</li>
-                            <li>The documentation topic should be relevant, creative, and original.</li>
-                            <li>The documentation video should exceed 3 minutes and must be clear, creative, and well-presented.</li>
-                            <li>The voice-over for the documentation video must be in English only.</li>
-                            <li>Any copied content from books, internet, or other sources will not be accepted.</li>
-                            <li>Participants should maintain discipline and follow the instructions given by the coordinators.</li>
-                            <li>Judges' decision will be final.</li>
+                            <li>Participation is in teams of maximum 3 members.</li>
+                            <li>50% of the model must be prepared at home and brought to the venue.</li>
+                            <li>Remaining 50% must be completed at the venue within the allotted time.</li>
+                            <li>Only waste/recyclable materials may be used.</li>
+                            <li>Participants must bring their own materials and tools.</li>
+                            <li>Use of hazardous materials is strictly prohibited.</li>
+                            <li>The model must be original and created only by team members.</li>
+                            <li>Judging criteria: creativity, use of waste materials, teamwork, and presentation.</li>
+                            <li>Maintain cleanliness and follow organizers’ instructions.</li>
+                            <li>Judges’ decision will be final.</li>
+                            <li>Rule violations may lead to disqualification.</li>
                         </ol>
                     </div>
                     <div class="registration-cta">
-                        <h5>Ready to Showcase Your Documentation?</h5>
-                        <button class="btn-primary" onclick="alert('Registrations are closed')">
+                        <h5 id="cta-text2">Ready to Showcase Your Model?</h5>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGyzaS8-A332m-s3u5np8eCW0pv3LpeI3976wde5OWrL9gfg/viewform?usp=header" 
+                           class="btn-primary" target="_blank" id="reg-btn2">
                             Register for the Event
-                        </button>
+                        </a>
                         <div class="countdown-timer">
-                            <p>Status:</p>
-                            <div class="timer-display">REGISTRATIONS CLOSED</div>
+                            <p id="timer-label2">Registration closes in:</p>
+                            <div class="timer-display" id="timer2">00:00:00</div>
                         </div>
                     </div>
                 </div>
@@ -591,13 +610,13 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Poetry Recitation</td>
+                            <td>Art from Waste</td>
                             <td>       </td>
                             <td>       </td>
                             <td>       </td>
                         </tr>
                         <tr>
-                            <td>Documentation</td>
+                            <td>Model Making</td>
                             <td>      </td>
                             <td>      </td>
                             <td>      </td>
@@ -625,7 +644,7 @@
         <div class="container footer-grid">
             <div class="footer-info">
                 <h3>GURU'S ATHENAEUM</h3>
-                <p>A celebration of poetry and creative expression at Guru Nanak Institutions English Literary Club.</p>
+                <p>A celebration of creativity and expression at Guru Nanak Institutions English Literary Club.</p>
             </div>
             <div class="footer-members">
                 <h3>Club Members</h3>
@@ -656,9 +675,68 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 GURU'S ATHENAEUM 26-26. Guru Nanak Institutions. All rights reserved.</p>
+            <p>&copy; 2026 GURU'S ATHENAEUM 25-26. Guru Nanak Institutions. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // TARGET DATE: 29 April 2026, 11:59 PM
+            const targetDate = new Date('April 29, 2026 23:59:59').getTime();
+
+            function updateCountdownTimer() {
+                const now = new Date().getTime();
+                const timeRemaining = targetDate - now;
+
+                const timer1 = document.getElementById('timer1');
+                const timer2 = document.getElementById('timer2');
+                const btn1 = document.getElementById('reg-btn1');
+                const btn2 = document.getElementById('reg-btn2');
+                const label1 = document.getElementById('timer-label1');
+                const label2 = document.getElementById('timer-label2');
+
+                if (timeRemaining > 0) {
+                    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                    const timeString = 
+                        (days > 0 ? days + "d " : "") + 
+                        String(hours).padStart(2, '0') + ":" + 
+                        String(minutes).padStart(2, '0') + ":" + 
+                        String(seconds).padStart(2, '0');
+
+                    if (timer1) timer1.textContent = timeString;
+                    if (timer2) timer2.textContent = timeString;
+                } else {
+                    // Timer ended
+                    if (timer1) timer1.textContent = "REGISTRATIONS CLOSED";
+                    if (timer2) timer2.textContent = "REGISTRATIONS CLOSED";
+                    
+                    if (label1) label1.style.display = 'none';
+                    if (label2) label2.style.display = 'none';
+
+                    // Disable buttons
+                    if (btn1) {
+                        btn1.classList.add('disabled');
+                        btn1.textContent = "Registrations Closed";
+                        btn1.href = "javascript:void(0)";
+                    }
+                    if (btn2) {
+                        btn2.classList.add('disabled');
+                        btn2.textContent = "Registrations Closed";
+                        btn2.href = "javascript:void(0)";
+                    }
+                }
+            }
+
+            // Run immediately and then every second
+            updateCountdownTimer();
+            setInterval(updateCountdownTimer, 1000);
+        });
+    </script>
 </body>
 </html>
+
 
