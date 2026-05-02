@@ -356,10 +356,56 @@
             background: var(--dark-blue);
         }
 
+        /* Previous Events Styling */
+        .previous-events {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .previous-events h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark-blue);
+        }
+
+        .prev-events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .prev-event-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-bottom: 4px solid var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .prev-event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .prev-event-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .prev-event-card h3 {
+            font-size: 1.2rem;
+            color: var(--dark-blue);
+            margin-bottom: 0;
+        }
+
         /* Winners Section */
         .winners {
             padding: 5rem 2rem;
-            background: var(--light-bg);
+            background: #fff;
         }
 
         .winners h2 {
@@ -405,6 +451,7 @@
         /* Gallery Section */
         .gallery {
             padding: 5rem 2rem;
+            background: var(--light-bg);
         }
 
         .gallery h2 {
@@ -613,6 +660,35 @@
             </div>
         </section>
 
+        <!-- Previous Events Section -->
+        <section id="previous-events" class="previous-events">
+            <div class="container">
+                <h2>Previous Events</h2>
+                <div class="prev-events-grid">
+                    <div class="prev-event-card">
+                        <span class="icon">📜</span>
+                        <h3>Poetry</h3>
+                    </div>
+                    <div class="prev-event-card">
+                        <span class="icon">📝</span>
+                        <h3>Documentation</h3>
+                    </div>
+                    <div class="prev-event-card">
+                        <span class="icon">♻️</span>
+                        <h3>Art from Waste</h3>
+                    </div>
+                    <div class="prev-event-card">
+                        <span class="icon">🏗️</span>
+                        <h3>Model Making</h3>
+                    </div>
+                    <div class="prev-event-card">
+                        <span class="icon">🦖</span>
+                        <h3>Wordzilla</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="winners" class="winners container">
             <h2>Weekly Event Winners List</h2>
             <div class="winners-table-container">
@@ -740,4 +816,5 @@
     </script>
 </body>
 </html>
+
 
