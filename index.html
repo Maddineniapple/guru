@@ -278,18 +278,43 @@
             margin-bottom: 0.75rem;
         }
 
-        .level-card {
-            background: #f8f9fa;
-            border-left: 4px solid var(--accent-blue);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 0 8px 8px 0;
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .level-card h5 {
+        .topic-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-blue);
+            font-size: 0.9rem;
+        }
+
+        .topic-item strong {
+            display: block;
             color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .criteria-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .criteria-table th, .criteria-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .criteria-table th {
+            background: var(--light-blue);
+            color: var(--dark-blue);
         }
 
         .registration-cta {
@@ -331,12 +356,6 @@
             background: var(--dark-blue);
         }
 
-        .btn-primary.disabled {
-            background: #666;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-
         /* Winners Section */
         .winners {
             padding: 5rem 2rem;
@@ -348,22 +367,6 @@
             font-size: 2.5rem;
             margin-bottom: 3rem;
             color: var(--dark-blue);
-        }
-
-        .valedictory-note {
-            margin-top: 2rem;
-            padding: 2rem;
-            background: var(--light-blue);
-            border-left: 4px solid var(--primary-blue);
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .valedictory-note p {
-            font-size: 1rem;
-            color: var(--dark-blue);
-            font-weight: 500;
-            line-height: 1.8;
         }
 
         .winners-table-container {
@@ -387,11 +390,26 @@
         .winners-table th {
             background: var(--primary-blue);
             color: #fff;
+            font-weight: 600;
+        }
+
+        .valedictory-note {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary-blue);
+            border-radius: 5px;
+            text-align: center;
         }
 
         /* Gallery Section */
         .gallery {
             padding: 5rem 2rem;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .gallery-grid {
@@ -412,7 +430,7 @@
             transform: scale(1.05);
         }
 
-        /* Footer */
+        /* Footer Styling */
         footer {
             background: var(--navy-blue);
             color: #fff;
@@ -423,11 +441,20 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
-            padding-bottom: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-info h3, .footer-members h3, .footer-contact h3 {
+            color: #FFD700;
+            margin-bottom: 1.5rem;
+        }
+
+        .member {
+            margin-bottom: 1rem;
         }
 
         .footer-bottom {
-            background: #00152b;
+            background: rgba(0,0,0,0.2);
             padding: 1.5rem 0;
             text-align: center;
             font-size: 0.9rem;
@@ -438,115 +465,151 @@
     <header>
         <div class="container header-grid">
             <div class="logo-left">
-                <img src="https://gniindia.org/images/logo.png" alt="GNI Logo" class="header-logo">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663596859077/MifRLgcaCSCemyTQ.png" alt="College Logo" class="header-logo">
             </div>
             <div class="header-center">
-                <img src="https://gniindia.org/images/logo_name.png" alt="GNI Name" class="header-center-img">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663596859077/VHuFLOHuGfHyXlCb.png" alt="College Name and Affiliations" class="header-center-img">
             </div>
             <div class="logo-right">
-                <img src="https://gniindia.org/images/logo_right.png" alt="Right Logo" class="header-logo">
+                <img src="https://res.cloudinary.com/dysrmfhoa/image/upload/v1777184461/guru_athenaeum_n1i2hp.jpg" alt="Athenaeum Logo" class="header-logo">
             </div>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <p class="department-title">Department of Humanities and Sciences</p>
-            <p class="club-subtitle">Guru's Athenaeum</p>
-            <h1>English Literary Club</h1>
-            <p class="main-slogan">"Where Words Weave Worlds"</p>
-            <p class="embrace-slogan">"Embrace the Power of Expression"</p>
+            <div class="container">
+                <p class="department-title">Department of Humanities and Sciences</p>
+                <h1>GURU'S ATHENAEUM</h1>
+                <p class="club-subtitle">English Literary Club</p>
+                <p class="main-slogan">"The limits of my language mean the limits of my world."</p>
+                <p class="embrace-slogan">Embrace the Art of Expression</p>
+            </div>
         </section>
 
-        <section id="benefits" class="benefits">
+        <section class="benefits">
             <div class="container">
-                <h2>Why Join the English Literary Club?</h2>
+                <h2>Why Join Guru's Athenaeum?</h2>
                 <div class="benefits-grid">
                     <div class="benefit-card">
-                        <div class="icon">✍️</div>
-                        <h3>Creative Writing</h3>
-                        <p>Unlock your imagination and master the art of storytelling through our specialized writing workshops.</p>
+                        <div class="icon">💡</div>
+                        <h3>Creative Expression</h3>
+                        <p>Unlock your creative potential through various literary forms and activities.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="icon">🗣️</div>
-                        <h3>Public Speaking</h3>
-                        <p>Build confidence and eloquence. Learn to captivate audiences with powerful speeches and debates.</p>
+                        <h3>Build Confidence</h3>
+                        <p>Master the art of public speaking, debate, and effective communication.</p>
                     </div>
                     <div class="benefit-card">
-                        <div class="icon">📚</div>
-                        <h3>Critical Thinking</h3>
-                        <p>Engage in profound literary discussions and develop a deeper understanding of diverse perspectives.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="icon">🏆</div>
-                        <h3>Win Recognition</h3>
-                        <p>Compete for prizes, certificates, and recognition. Every participant is celebrated for their unique performance.</p>
+                        <div class="icon">🌟</div>
+                        <h3>Personal Growth</h3>
+                        <p>Build confidence and develop a well-rounded personality for future success.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="events" class="events container">
-            <h2>This Week's Events</h2>
+            <h2>Upcoming Events</h2>
             <div class="events-grid">
-
-                <!-- EVENT: Wordzilla -->
+                
+                <!-- Poster Making Card -->
                 <div class="event-card">
                     <div class="event-header">
-                        <h3>Wordzilla</h3>
-                        <p>Unravel mysteries and test your wit in 3 challenging levels</p>
+                        <h3>Poster Making Competition</h3>
+                        <p>Artistic synthesis of research and awareness.</p>
                     </div>
                     <div class="event-details">
                         <div class="detail-item">
                             <span class="label">Date</span>
-                            <span class="value">02 May 2026</span>
+                            <span class="value">04 May 2026</span>
                         </div>
                         <div class="detail-item">
                             <span class="label">Time</span>
-                            <span class="value">10:00 AM to 1:00 PM</span>
+                            <span class="value">10:00 AM - 12:00 PM</span>
                         </div>
                     </div>
                     <div class="rules-section">
-                        <h4>Event Structure & Levels</h4>
-                        
-                        <div class="level-card">
-                            <h5>Level 1: Word Building Challenge</h5>
-                            <p><strong>Rules:</strong> Start with a word given by the organizers. Participants must write new words starting with the <strong>last letter</strong> of the previous word.</p>
-                            <p><strong>Time Limit:</strong> 5 Minutes</p>
-                            <p><strong>Criteria:</strong> Participants must write at least 5 valid words. Those with the highest number of valid words will qualify for the next level.</p>
-                        </div>
+                        <h4>Poster Making Rules</h4>
+                        <ul>
+                            <li>Posters should be made on society based themes or awareness.</li>
+                            <li>Posters should be drawn by their own. Reference images will not be allowed to view in the venue.</li>
+                            <li>Participants must draw the poster in the venue and are instructed to bring their own art materials.</li>
+                            <li>Posters should be drawn on the drawing sheets available in our college stationary to ensure uniformity.</li>
+                        </ul>
 
-                        <div class="level-card">
-                            <h5>Level 2: Mystery Round</h5>
-                            <p><em>To be revealed after Level 1 completion.</em></p>
+                        <h4 style="margin-top: 1.5rem;">Suggested Themes</h4>
+                        <div class="topics-grid">
+                            <div class="topic-item"><strong>Global Poverty</strong> Growth vs Rural/Urban divide.</div>
+                            <div class="topic-item"><strong>Refugee Crisis</strong> War, migration, human rights.</div>
+                            <div class="topic-item"><strong>Future Jobs</strong> Careers that don't exist today.</div>
+                            <div class="topic-item"><strong>Minimalism</strong> Living more with less.</div>
+                            <div class="topic-item"><strong>Psychology of Success</strong> Beliefs and habits.</div>
+                            <div class="topic-item"><strong>Entrepreneurship</strong> Startup vs Job mindset.</div>
                         </div>
-
-                        <div class="level-card">
-                            <h5>Level 3: Grand Finale</h5>
-                            <p><em>The ultimate challenge for the top qualifiers.</em></p>
-                        </div>
-
-                        <h4>General Rules</h4>
-                        <ol>
-                            <li>Participation is in teams of maximum 2 members.</li>
-                            <li>Levels 2 and 3 will only be revealed to those who clear the previous level.</li>
-                            <li>Participants must complete the tasks within the allotted time.</li>
-                            <li>Judges’ decision will be final.</li>
-                            <li>Rule violations may lead to disqualification.</li>
-                        </ol>
                     </div>
                     <div class="registration-cta">
-                        <h5 id="cta-text2">Ready to Solve the Mystery?</h5>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOOlvJOo0F_8AlOyxzEh8OvO_TmLWh1tYMDuPsw8MlfQ5v3g/viewform?usp=publish-editor" 
-                           class="btn-primary" target="_blank" id="reg-btn2">
-                            Register for the Event
-                        </a>
+                        <h5>Ready to Create?</h5>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScm1ur5xig-RO6Tjuo4yIMAJIphKu56amSJDGRdev4EARRcRQ/viewform?usp=header" class="btn-primary" target="_blank">Register for Poster Making</a>
                         <div class="countdown-timer">
-                            <p id="timer-label2">Registration closes in:</p>
-                            <div class="timer-display" id="timer2">00:00:00</div>
+                            <p>Registration closes in:</p>
+                            <div class="timer-display" id="timer-poster">00:00:00</div>
                         </div>
                     </div>
                 </div>
+
+                <!-- PPT Presentation Card -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3>PPT Presentation Competition</h3>
+                        <p>Visual impact meets professional eloquence.</p>
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <span class="label">Date</span>
+                            <span class="value">04 May 2026</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Time</span>
+                            <span class="value">1:00 PM - 2:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="rules-section">
+                        <h4>PPT Guidelines</h4>
+                        <ul>
+                            <li><strong>Good Attire:</strong> All participants must dress in appropriate professional business attire. A polished and professional appearance contributes to the overall presentation scoring.</li>
+                            <li><strong>Slide Count:</strong> To prevent "death by PowerPoint," you might limit slides to a maximum of 10-12.</li>
+                            <li><strong>Content & Ethics:</strong> (A new rule) Content must adhere to academic integrity. AI-generated text or graphics must be clearly cited as such.</li>
+                            <li><strong>The 6x6 Rule:</strong> Encourage clarity by suggesting no more than 6 lines of text per slide and 6 words per line.</li>
+                            <li><strong>Media Usage:</strong> Embedded videos are permitted but cannot exceed 30 seconds of the total presentation time.</li>
+                            <li><strong>Duration:</strong> Each presentation must be 5-7 minutes long, followed by a 2-minute Q&A session. A 1-minute grace period is allowed before point deductions apply.</li>
+                            <li><strong>File Format:</strong> All presentations must be submitted in PDF or PPTX format at least 24 hours before the event.</li>
+                        </ul>
+
+                        <h4>Evaluation Criteria</h4>
+                        <table class="criteria-table">
+                            <thead>
+                                <tr><th>Category</th><th>Points</th><th>Focus Area</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Content & Research</td><td>15</td><td>Depth of knowledge, accuracy, and logical flow.</td></tr>
+                                <tr><td>Oral Delivery</td><td>15</td><td>Tone, pace, eye contact, and confidence.</td></tr>
+                                <tr><td>Visual Design</td><td>10</td><td>Layout, readability, and use of relevant imagery.</td></tr>
+                                <tr><td>Q&A Handling</td><td>10</td><td>Ability to answer questions with authority and clarity.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="registration-cta">
+                        <h5>Ready to Present?</h5>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSftEllk5qidqpMSRPoFn90ru05rLLfcLznE9APjaR1KQlbDJw/viewform?usp=header" class="btn-primary" target="_blank">Register for PPT Event</a>
+                        <div class="countdown-timer">
+                            <p>Registration closes in:</p>
+                            <div class="timer-display" id="timer-ppt">00:00:00</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -641,15 +704,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const targetDate = new Date('May 02, 2026 00:00:00').getTime();
+            // Target date: Tomorrow (May 3, 2026) at 11:59:59 PM
+            const targetDate = new Date('May 03, 2026 23:59:59').getTime();
 
             function updateCountdownTimer() {
                 const now = new Date().getTime();
                 const timeRemaining = targetDate - now;
 
-                const timer2 = document.getElementById('timer2');
-                const btn2 = document.getElementById('reg-btn2');
-                const label2 = document.getElementById('timer-label2');
+                const timerPpt = document.getElementById('timer-ppt');
+                const timerPoster = document.getElementById('timer-poster');
 
                 if (timeRemaining > 0) {
                     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
@@ -663,16 +726,11 @@
                         String(minutes).padStart(2, '0') + ":" + 
                         String(seconds).padStart(2, '0');
 
-                    if (timer2) timer2.textContent = timeString;
+                    if (timerPpt) timerPpt.textContent = timeString;
+                    if (timerPoster) timerPoster.textContent = timeString;
                 } else {
-                    if (timer2) timer2.textContent = "REGISTRATIONS CLOSED";
-                    if (label2) label2.style.display = 'none';
-
-                    if (btn2) {
-                        btn2.classList.add('disabled');
-                        btn2.textContent = "Registrations Closed";
-                        btn2.href = "javascript:void(0)";
-                    }
+                    if (timerPpt) timerPpt.textContent = "REGISTRATIONS CLOSED";
+                    if (timerPoster) timerPoster.textContent = "REGISTRATIONS CLOSED";
                 }
             }
 
