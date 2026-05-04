@@ -371,7 +371,7 @@
 
         .prev-events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1.5rem;
         }
 
@@ -379,9 +379,8 @@
             background: #fff;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: var(--shadow);
             text-align: center;
-            border-bottom: 4px solid var(--primary-blue);
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
@@ -396,40 +395,32 @@
             display: block;
         }
 
-        .prev-event-card h3 {
-            font-size: 1.2rem;
-            color: var(--dark-blue);
-            margin-bottom: 0;
-        }
-
-        /* Winners Section */
+        /* Winners Section Styling */
         .winners {
             padding: 5rem 2rem;
-            background: #fff;
         }
 
         .winners h2 {
             text-align: center;
-            font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: var(--dark-blue);
         }
 
         .winners-table-container {
             overflow-x: auto;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
         }
 
         .winners-table {
             width: 100%;
             border-collapse: collapse;
-            text-align: left;
+            background: #fff;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .winners-table th, .winners-table td {
-            padding: 1.5rem;
+            padding: 1.2rem;
+            text-align: left;
             border-bottom: 1px solid #eee;
         }
 
@@ -439,13 +430,16 @@
             font-weight: 600;
         }
 
+        .winners-table tr:last-child td {
+            border-bottom: none;
+        }
+
         .valedictory-note {
             margin-top: 2rem;
             padding: 2rem;
-            background: var(--light-blue);
-            border-left: 4px solid var(--primary-blue);
+            background: #fff9c4;
+            border-left: 5px solid #fbc02d;
             border-radius: 5px;
-            text-align: center;
         }
 
         /* Gallery Section */
@@ -465,23 +459,29 @@
             gap: 1.5rem;
         }
 
+        .gallery-item {
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
         .gallery-item img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 10px;
             transition: var(--transition);
         }
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
         /* Footer Styling */
         footer {
             background: var(--navy-blue);
             color: #fff;
-            padding: 4rem 0 0;
+            padding: 4rem 2rem 0;
         }
 
         .footer-grid {
@@ -496,8 +496,9 @@
             margin-bottom: 1.5rem;
         }
 
-        .member {
+        .footer-members .member {
             margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
         .footer-bottom {
@@ -570,7 +571,7 @@
                     <div class="event-details">
                         <div class="detail-item">
                             <span class="label">Date</span>
-                            <span class="value">04 May 2026</span>
+                            <span class="value">05 May 2026</span>
                         </div>
                         <div class="detail-item">
                             <span class="label">Time</span>
@@ -598,7 +599,7 @@
                     </div>
                     <div class="registration-cta">
                         <h5>Ready to Create?</h5>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScm1ur5xig-RO6Tjuo4yIMAJIphKu56amSJDGRdev4EARRcRQ/viewform?usp=header" class="btn-primary" target="_blank">Register for Poster Making</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScm1ur5xig-RO6Tjuo4yIMAJIphKu56amSJDGRdev4EARRcRQ/viewform?usp=header" class="btn-primary" id="btn-poster" target="_blank">Register for Poster Making</a>
                         <div class="countdown-timer">
                             <p>Registration closes in:</p>
                             <div class="timer-display" id="timer-poster">00:00:00</div>
@@ -615,7 +616,7 @@
                     <div class="event-details">
                         <div class="detail-item">
                             <span class="label">Date</span>
-                            <span class="value">04 May 2026</span>
+                            <span class="value">05 May 2026</span>
                         </div>
                         <div class="detail-item">
                             <span class="label">Time</span>
@@ -649,7 +650,7 @@
                     </div>
                     <div class="registration-cta">
                         <h5>Ready to Present?</h5>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSftEllk5qidqpMSRPoFn90ru05rLLfcLznE9APjaR1KQlbDJw/viewform?usp=header" class="btn-primary" target="_blank">Register for PPT Event</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSftEllk5qidqpMSRPoFn90ru05rLLfcLznE9APjaR1KQlbDJw/viewform?usp=header" class="btn-primary" id="btn-ppt" target="_blank">Register for PPT Event</a>
                         <div class="countdown-timer">
                             <p>Registration closes in:</p>
                             <div class="timer-display" id="timer-ppt">00:00:00</div>
@@ -724,7 +725,7 @@
                 </table>
             </div>
             <div class="valedictory-note">
-                <p>The winners shall be formally honoured and awarded prizes at the Valedictory Session, convened upon the successful culmination of the three-week literary event series.</p>
+                <p>The winners shall be awarded during the valedictory ceremony.</p>
             </div>
         </section>
 
@@ -780,8 +781,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Target date: Tomorrow (May 3, 2026) at 11:59:59 PM
-            const targetDate = new Date('May 03, 2026 23:59:59').getTime();
+            // Target date: Midnight tonight (End of May 04, 2026)
+            const targetDate = new Date('May 04, 2026 23:59:59').getTime();
 
             function updateCountdownTimer() {
                 const now = new Date().getTime();
@@ -789,6 +790,8 @@
 
                 const timerPpt = document.getElementById('timer-ppt');
                 const timerPoster = document.getElementById('timer-poster');
+                const btnPpt = document.getElementById('btn-ppt');
+                const btnPoster = document.getElementById('btn-poster');
 
                 if (timeRemaining > 0) {
                     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
@@ -805,8 +808,21 @@
                     if (timerPpt) timerPpt.textContent = timeString;
                     if (timerPoster) timerPoster.textContent = timeString;
                 } else {
-                    if (timerPpt) timerPpt.textContent = "REGISTRATIONS CLOSED";
-                    if (timerPoster) timerPoster.textContent = "REGISTRATIONS CLOSED";
+                    const closedText = "REGISTRATIONS CLOSED";
+                    if (timerPpt) timerPpt.textContent = closedText;
+                    if (timerPoster) timerPoster.textContent = closedText;
+                    
+                    // Disable registration buttons
+                    if (btnPpt) {
+                        btnPpt.style.pointerEvents = "none";
+                        btnPpt.style.background = "#ccc";
+                        btnPpt.textContent = "Registration Closed";
+                    }
+                    if (btnPoster) {
+                        btnPoster.style.pointerEvents = "none";
+                        btnPoster.style.background = "#ccc";
+                        btnPoster.textContent = "Registration Closed";
+                    }
                 }
             }
 
