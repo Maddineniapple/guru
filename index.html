@@ -334,16 +334,70 @@
             font-weight: 600;
             margin-top: 1rem;
             transition: var(--transition);
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary:hover {
             background: var(--dark-blue);
         }
 
-        /* Previous Events Styling */
+        /* Certificate Portal Styling */
+        .certificate-portal {
+            padding: 5rem 2rem;
+            background: var(--light-blue);
+            text-align: center;
+        }
+
+        .certificate-portal h2 {
+            color: var(--dark-blue);
+            margin-bottom: 2rem;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            outline: none;
+        }
+
+        .search-hint {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        #certificate-result {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px dashed #ccc;
+            display: none;
+        }
+
+        .success-msg {
+            color: #2e7d32;
+            background: #e8f5e9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        /* Previous Events Section */
         .previous-events {
             padding: 5rem 2rem;
-            background: var(--light-bg);
+            background: #fff;
         }
 
         .previous-events h2 {
@@ -356,19 +410,20 @@
         .prev-events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .prev-event-card {
-            background: #fff;
+            background: var(--light-bg);
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
         .prev-event-card:hover {
+            background: var(--primary-blue);
+            color: #fff;
             transform: scale(1.05);
         }
 
@@ -378,14 +433,23 @@
             display: block;
         }
 
-        /* Winners Section */
+        /* Winners Table Styling */
         .winners {
             padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .winners h2 {
+            text-align: center;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
         }
 
         .winners-table-container {
             overflow-x: auto;
-            margin-top: 2rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
         }
 
         .winners-table {
@@ -395,44 +459,49 @@
         }
 
         .winners-table th, .winners-table td {
-            padding: 1rem;
-            border: 1px solid #ddd;
+            padding: 1.2rem;
             text-align: left;
+            border-bottom: 1px solid #eee;
         }
 
         .winners-table th {
             background: var(--primary-blue);
             color: #fff;
+            font-weight: 600;
         }
 
-        .winners-table tr:nth-child(even) {
-            background: var(--light-bg);
+        .winners-table tr:hover {
+            background: #f1f8ff;
         }
 
         .valedictory-note {
-            text-align: center;
             margin-top: 2rem;
+            text-align: center;
             font-style: italic;
             color: #666;
         }
 
-        /* Gallery Section */
+        /* Gallery Styling */
         .gallery {
             padding: 5rem 2rem;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin-top: 2rem;
         }
 
         .gallery-item {
+            height: 250px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            height: 200px;
         }
 
         .gallery-item img {
@@ -588,6 +657,23 @@
             </div>
         </section>
 
+        <!-- Certificate Portal Section -->
+        <section id="certificates" class="certificate-portal">
+            <div class="container">
+                <h2>E-Certificate Portal</h2>
+                <div class="search-container">
+                    <p>Enter your Roll Number to download your certificate.</p>
+                    <input type="text" id="cert-search" class="search-input" placeholder="e.g. 21X01A0501">
+                    <p class="search-hint">Note: Ensure the roll number is entered correctly as per college records.</p>
+                    <button class="btn-primary" onclick="searchCertificate()">Search Certificate</button>
+                    
+                    <div id="certificate-result">
+                        <!-- Result will be injected here by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Previous Events Section -->
         <section id="previous-events" class="previous-events">
             <div class="container">
@@ -725,6 +811,34 @@
     </footer>
 
     <script>
+        // Certificate Search Logic
+        function searchCertificate() {
+            const input = document.getElementById('cert-search').value.trim();
+            const resultDiv = document.getElementById('certificate-result');
+            
+            if (!input) {
+                alert('Please enter your Roll Number');
+                return;
+            }
+
+            // Convert spaces to underscores for file naming convention
+            const fileName = input.replace(/\s+/g, '_');
+            
+            // In a real static site, we can't check if file exists without a server
+            // So we provide the link and let the user try to download
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <div class="success-msg">
+                    <p>Searching for: <strong>${input}</strong></p>
+                    <p>If your certificate is ready, click the button below to download.</p>
+                    <a href="certificates/${fileName}.pdf" download class="btn-primary" style="background: #2e7d32; margin-top: 10px;">Download PDF Certificate</a>
+                </div>
+                <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">
+                    Note: If the download fails, your certificate might not be uploaded yet or the roll number is incorrect.
+                </p>
+            `;
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             // Target date: Tomorrow at 02:00 AM (May 07, 2026)
             const targetDate = new Date('May 07, 2026 02:00:00').getTime();
@@ -768,6 +882,7 @@
     </script>
 </body>
 </html>
+
 
 
 
