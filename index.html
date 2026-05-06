@@ -196,8 +196,10 @@
 
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-template-columns: 1fr;
             gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
@@ -210,7 +212,6 @@
             .header-logo, .header-center-img { height: 70px; }
             .hero { padding-top: 2rem; min-height: auto; }
             .hero h1 { font-size: 2.5rem; }
-            .events-grid { grid-template-columns: 1fr; }
         }
 
         .event-card {
@@ -278,43 +279,26 @@
             margin-bottom: 0.75rem;
         }
 
-        .topics-grid {
+        .levels-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin-top: 1rem;
         }
 
-        .topic-item {
+        .level-item {
             background: #f8f9fa;
-            padding: 1rem;
+            padding: 1.5rem;
             border-radius: 8px;
-            border-left: 3px solid var(--accent-blue);
-            font-size: 0.9rem;
+            border-left: 4px solid var(--accent-blue);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        .topic-item strong {
+        .level-item strong {
             display: block;
             color: var(--primary-blue);
-            margin-bottom: 0.3rem;
-        }
-
-        .criteria-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-        }
-
-        .criteria-table th, .criteria-table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-
-        .criteria-table th {
-            background: var(--light-blue);
-            color: var(--dark-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
 
         .registration-cta {
@@ -371,8 +355,8 @@
 
         .prev-events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
         }
 
         .prev-event-card {
@@ -385,8 +369,7 @@
         }
 
         .prev-event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transform: scale(1.05);
         }
 
         .prev-event-card .icon {
@@ -395,75 +378,61 @@
             display: block;
         }
 
-        /* Winners Section Styling */
+        /* Winners Section */
         .winners {
             padding: 5rem 2rem;
         }
 
-        .winners h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
         .winners-table-container {
             overflow-x: auto;
+            margin-top: 2rem;
         }
 
         .winners-table {
             width: 100%;
             border-collapse: collapse;
-            background: #fff;
-            box-shadow: var(--shadow);
-            border-radius: 10px;
-            overflow: hidden;
+            min-width: 600px;
         }
 
         .winners-table th, .winners-table td {
-            padding: 1.2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
             text-align: left;
-            border-bottom: 1px solid #eee;
         }
 
         .winners-table th {
             background: var(--primary-blue);
             color: #fff;
-            font-weight: 600;
         }
 
-        .winners-table tr:last-child td {
-            border-bottom: none;
+        .winners-table tr:nth-child(even) {
+            background: var(--light-bg);
         }
 
         .valedictory-note {
+            text-align: center;
             margin-top: 2rem;
-            padding: 2rem;
-            background: #fff9c4;
-            border-left: 5px solid #fbc02d;
-            border-radius: 5px;
+            font-style: italic;
+            color: #666;
         }
 
         /* Gallery Section */
         .gallery {
             padding: 5rem 2rem;
-            background: var(--light-bg);
-        }
-
-        .gallery h2 {
-            text-align: center;
-            margin-bottom: 3rem;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .gallery-item {
-            height: 200px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
+            height: 200px;
         }
 
         .gallery-item img {
@@ -488,7 +457,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
-            margin-bottom: 3rem;
+            padding-bottom: 3rem;
         }
 
         .footer-info h3, .footer-members h3, .footer-contact h3 {
@@ -496,9 +465,8 @@
             margin-bottom: 1.5rem;
         }
 
-        .footer-members .member {
+        .member {
             margin-bottom: 1rem;
-            font-size: 0.9rem;
         }
 
         .footer-bottom {
@@ -562,98 +530,57 @@
             <h2>Upcoming Events</h2>
             <div class="events-grid">
                 
-                <!-- Poster Making Card -->
+                <!-- Ultimate Literary Challenge Card -->
                 <div class="event-card">
                     <div class="event-header">
-                        <h3>Poster Making Competition</h3>
-                        <p>Artistic synthesis of research and awareness.</p>
+                        <h3>The Ultimate Literary Challenge</h3>
+                        <p>A multi-level journey through language and expression.</p>
                     </div>
                     <div class="event-details">
                         <div class="detail-item">
                             <span class="label">Date</span>
-                            <span class="value">05 May 2026</span>
+                            <span class="value">07 May 2026</span>
                         </div>
                         <div class="detail-item">
                             <span class="label">Time</span>
-                            <span class="value">10:00 AM - 12:00 PM</span>
+                            <span class="value">10:00 AM Onwards</span>
                         </div>
                     </div>
                     <div class="rules-section">
-                        <h4>Poster Making Rules</h4>
-                        <ul>
-                            <li>Posters should be made on society based themes or awareness.</li>
-                            <li>Posters should be drawn by their own. Reference images will not be allowed to view in the venue.</li>
-                            <li>Participants must draw the poster in the venue and are instructed to bring their own art materials.</li>
-                            <li>Posters should be drawn on the drawing sheets available in our college stationary to ensure uniformity.</li>
-                        </ul>
-
-                        <h4 style="margin-top: 1.5rem;">Suggested Themes</h4>
-                        <div class="topics-grid">
-                            <div class="topic-item"><strong>Global Poverty</strong> Growth vs Rural/Urban divide.</div>
-                            <div class="topic-item"><strong>Refugee Crisis</strong> War, migration, human rights.</div>
-                            <div class="topic-item"><strong>Future Jobs</strong> Careers that don't exist today.</div>
-                            <div class="topic-item"><strong>Minimalism</strong> Living more with less.</div>
-                            <div class="topic-item"><strong>Psychology of Success</strong> Beliefs and habits.</div>
-                            <div class="topic-item"><strong>Entrepreneurship</strong> Startup vs Job mindset.</div>
+                        <h4>Challenge Levels</h4>
+                        <div class="levels-grid">
+                            <div class="level-item">
+                                <strong>Level 1: TABOO</strong>
+                                <p>Guess the object/device name from placards. (2 mins per card, 2 cards per team)</p>
+                            </div>
+                            <div class="level-item">
+                                <strong>Level 2: TONGUE TWISTERS</strong>
+                                <p>Master the twist! 5 twisters per team to test your articulation.</p>
+                            </div>
+                            <div class="level-item">
+                                <strong>Level 3: DUMB CHARADES</strong>
+                                <p>Act out movie titles without speaking for your partner to guess.</p>
+                            </div>
+                            <div class="level-item">
+                                <strong>Level 4: STORY NARRATION</strong>
+                                <p>Create a fiction or scientific story using 3 given words. (3 mins, 2 attempts)</p>
+                            </div>
+                            <div class="level-item">
+                                <strong>Level 5: SURPRISE LEVEL</strong>
+                                <p>To be revealed at the venue. Expect the unexpected!</p>
+                            </div>
+                            <div class="level-item">
+                                <strong>Level 6: SURPRISE LEVEL</strong>
+                                <p>The final showdown. Details will be revealed during the event.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="registration-cta">
-                        <h5>Ready to Create?</h5>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScm1ur5xig-RO6Tjuo4yIMAJIphKu56amSJDGRdev4EARRcRQ/viewform?usp=header" class="btn-primary" id="btn-poster" target="_blank">Register for Poster Making</a>
+                        <h5>Are you ready for the challenge?</h5>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9ciFs2Cu8977-qCb4Xom5BhpZSP9H0tCmiK_o7s9BclJbmA/viewform?usp=header" class="btn-primary" id="btn-challenge" target="_blank">Register for the Challenge</a>
                         <div class="countdown-timer">
                             <p>Registration closes in:</p>
-                            <div class="timer-display" id="timer-poster">00:00:00</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PPT Presentation Card -->
-                <div class="event-card">
-                    <div class="event-header">
-                        <h3>PPT Presentation Competition</h3>
-                        <p>Visual impact meets professional eloquence.</p>
-                    </div>
-                    <div class="event-details">
-                        <div class="detail-item">
-                            <span class="label">Date</span>
-                            <span class="value">05 May 2026</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="label">Time</span>
-                            <span class="value">1:00 PM - 2:00 PM</span>
-                        </div>
-                    </div>
-                    <div class="rules-section">
-                        <h4>PPT Guidelines</h4>
-                        <ul>
-                            <li><strong>Good Attire:</strong> All participants must dress in appropriate professional business attire. A polished and professional appearance contributes to the overall presentation scoring.</li>
-                            <li><strong>Slide Count:</strong> To prevent "death by PowerPoint," you might limit slides to a maximum of 10-12.</li>
-                            <li><strong>Content & Ethics:</strong> (A new rule) Content must adhere to academic integrity. AI-generated text or graphics must be clearly cited as such.</li>
-                            <li><strong>The 6x6 Rule:</strong> Encourage clarity by suggesting no more than 6 lines of text per slide and 6 words per line.</li>
-                            <li><strong>Media Usage:</strong> Embedded videos are permitted but cannot exceed 30 seconds of the total presentation time.</li>
-                            <li><strong>Duration:</strong> Each presentation must be 5-7 minutes long, followed by a 2-minute Q&A session. A 1-minute grace period is allowed before point deductions apply.</li>
-                            <li><strong>File Format:</strong> All presentations must be submitted in PDF or PPTX format at least 24 hours before the event.</li>
-                        </ul>
-
-                        <h4>Evaluation Criteria</h4>
-                        <table class="criteria-table">
-                            <thead>
-                                <tr><th>Category</th><th>Points</th><th>Focus Area</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Content & Research</td><td>15</td><td>Depth of knowledge, accuracy, and logical flow.</td></tr>
-                                <tr><td>Oral Delivery</td><td>15</td><td>Tone, pace, eye contact, and confidence.</td></tr>
-                                <tr><td>Visual Design</td><td>10</td><td>Layout, readability, and use of relevant imagery.</td></tr>
-                                <tr><td>Q&A Handling</td><td>10</td><td>Ability to answer questions with authority and clarity.</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="registration-cta">
-                        <h5>Ready to Present?</h5>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSftEllk5qidqpMSRPoFn90ru05rLLfcLznE9APjaR1KQlbDJw/viewform?usp=header" class="btn-primary" id="btn-ppt" target="_blank">Register for PPT Event</a>
-                        <div class="countdown-timer">
-                            <p>Registration closes in:</p>
-                            <div class="timer-display" id="timer-ppt">00:00:00</div>
+                            <div class="timer-display" id="timer-challenge">00:00:00</div>
                         </div>
                     </div>
                 </div>
@@ -685,6 +612,18 @@
                     <div class="prev-event-card">
                         <span class="icon">🦖</span>
                         <h3>Wordzilla</h3>
+                    </div>
+                    <div class="prev-event-card">
+                        <span class="icon">🖼️</span>
+                        <h3>Poster Making</h3>
+                    </div>
+                    <div class="prev-event-card">
+                        <span class="icon">📊</span>
+                        <h3>PPT Presentation</h3>
+                    </div>
+                    <div class="prev-event-card">
+                        <span class="icon">🏛️</span>
+                        <h3>Mock Parliament</h3>
                     </div>
                 </div>
             </div>
@@ -721,7 +660,7 @@
                             <td>k. nikhitha (ECE 2), G.Kalapana (ECE 2), G.Bindhu (ECE 2)</td>
                             <td>G. Lavanya (IT 1), A.Chaithra (IT 1), D.Saisree ( IT 1)</td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>Wordzilla</td>
                             <td>Ramavath Chandana (CSC 2), Amatul Zurien (CSD 1)</td>
                             <td>Narotham Reddy (IOT), Sathwik (IOT)</td>
@@ -787,17 +726,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Target date: Today at 9:00 AM (May 05, 2026)
-            const targetDate = new Date('May 05, 2026 09:00:00').getTime();
+            // Target date: Tomorrow at 02:00 AM (May 07, 2026)
+            const targetDate = new Date('May 07, 2026 02:00:00').getTime();
 
             function updateCountdownTimer() {
                 const now = new Date().getTime();
                 const timeRemaining = targetDate - now;
 
-                const timerPpt = document.getElementById('timer-ppt');
-                const timerPoster = document.getElementById('timer-poster');
-                const btnPpt = document.getElementById('btn-ppt');
-                const btnPoster = document.getElementById('btn-poster');
+                const timerChallenge = document.getElementById('timer-challenge');
+                const btnChallenge = document.getElementById('btn-challenge');
 
                 if (timeRemaining > 0) {
                     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
@@ -811,23 +748,16 @@
                         String(minutes).padStart(2, '0') + ":" + 
                         String(seconds).padStart(2, '0');
 
-                    if (timerPpt) timerPpt.textContent = timeString;
-                    if (timerPoster) timerPoster.textContent = timeString;
+                    if (timerChallenge) timerChallenge.textContent = timeString;
                 } else {
                     const closedText = "REGISTRATIONS CLOSED";
-                    if (timerPpt) timerPpt.textContent = closedText;
-                    if (timerPoster) timerPoster.textContent = closedText;
+                    if (timerChallenge) timerChallenge.textContent = closedText;
                     
-                    // Disable registration buttons
-                    if (btnPpt) {
-                        btnPpt.style.pointerEvents = "none";
-                        btnPpt.style.background = "#ccc";
-                        btnPpt.textContent = "Registration Closed";
-                    }
-                    if (btnPoster) {
-                        btnPoster.style.pointerEvents = "none";
-                        btnPoster.style.background = "#ccc";
-                        btnPoster.textContent = "Registration Closed";
+                    // Disable registration button
+                    if (btnChallenge) {
+                        btnChallenge.style.pointerEvents = "none";
+                        btnChallenge.style.background = "#ccc";
+                        btnChallenge.textContent = "Registration Closed";
                     }
                 }
             }
@@ -838,6 +768,7 @@
     </script>
 </body>
 </html>
+
 
 
 
