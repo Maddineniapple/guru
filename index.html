@@ -223,14 +223,48 @@
             padding-top: 2rem;
             border-top: 1px dashed #ccc;
             display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .success-msg {
-            color: #2e7d32;
-            background: #e8f5e9;
+            color: #1a5490;
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid #bbdefb;
+        }
+
+        .error-msg {
+            color: #d32f2f;
+            background: #ffebee;
             padding: 1rem;
             border-radius: 8px;
             margin-bottom: 1rem;
+            border: 1px solid #ffcdd2;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #2e7d32;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+
+        .download-btn:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         /* Previous Events Section */
@@ -482,25 +516,20 @@
                 <table class="winners-table">
                     <thead>
                         <tr>
-                            <th>Event Name</th>
-                            <th>Winner Name</th>
-                            <th>Roll Number</th>
-                            <th>Prize</th>
+                            <th>Event</th>
+                            <th>1st Place</th>
+                            <th>2nd Place</th>
+                            <th>3rd Place</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Poetry Slam</td>
-                            <td>Jane Doe</td>
-                            <td>21X01A0501</td>
-                            <td>First Prize</td>
-                        </tr>
-                        <tr>
-                            <td>Debate Competition</td>
-                            <td>John Smith</td>
-                            <td>21X01A0502</td>
-                            <td>Second Prize</td>
-                        </tr>
+                        <tr><td>Poetry Recitation</td><td>Ananya</td><td>R.Hasini</td><td>Subha Mukthi</td></tr>
+                        <tr><td>Documentation</td><td>Charan tej</td><td>S.Sahil</td><td>Md.Toufeeq Ahmed</td></tr>
+                        <tr><td>Art from waste</td><td>Anitha malik (ECE 1), ch.Bhargavi (ECE 1)</td><td>k. nikhitha (ECE 2), G.Kalapana (ECE 2), G.Bindhu (ECE 2)</td><td>G. Lavanya (IT 1), A.Chaithra (IT 1), D.Saisree ( IT 1)</td></tr>
+                        <tr><td>Wordzilla</td><td>Ramavath Chandana (CSC 2), Amatul Zurien (CSD 1)</td><td>Narotham Reddy (IOT), Sathwik (IOT)</td><td>Praveen(CSD 3), Subha Mukti (CSD 3)</td></tr>
+                        <tr><td>PPT PRESENTATION</td><td> Sharan Kumar(CSC-2)</td><td> Vaishnavi (ECE-1)</td><td>Vyshali (DS-1)</td></tr>
+                        <tr><td>POSTER MAKING</td><td>Mukthi (CSD-3)</td><td> Yashwanth (CSC-2)</td><td> Tanusree (CSE 3), Anitha (ECE 1)</td></tr>
+                        <tr><td>MindScape</td><td>Hasini (CSD-3), Deepika (CSD-3)</td><td>V Finney Johnson (CSC-2), Abhiram(CSC-2)</td><td> Sai Charan (IT-1), Sreekar (IT-1)</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -546,7 +575,7 @@
 
     <script>
         function searchCertificate() {
-            const input = document.getElementById('cert-search').value.trim();
+            const input = document.getElementById('cert-search').value.trim().toUpperCase();
             const resultDiv = document.getElementById('certificate-result');
             
             if (!input) {
@@ -554,20 +583,30 @@
                 return;
             }
 
-            const fileName = input.replace(/\s+/g, '_');
-            
+            // Show searching state
             resultDiv.style.display = 'block';
             resultDiv.innerHTML = `
                 <div class="success-msg">
-                    <p>Searching for: <strong>${input}</strong></p>
-                    <p>If your certificate is ready, click the button below to download.</p>
-                    <a href="certificates/${fileName}.pdf" download class="btn-primary" style="background: #2e7d32; margin-top: 10px; display: inline-block; padding: 0.5rem 1rem; color: #fff; text-decoration: none; border-radius: 5px;">Download PDF Certificate</a>
+                    <p>🔍 Checking for Roll Number: <strong>${input}</strong></p>
+                    <p>Your certificate is ready! Click the button below to download your official E-Certificate.</p>
+                    <a href="certificates/${input}.pdf" download="${input}_Certificate.pdf" class="download-btn">
+                        📥 Download PDF Certificate
+                    </a>
                 </div>
-                <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">
-                    Note: If the download fails, your certificate might not be uploaded yet or the roll number is incorrect.
-                </p>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: #fff8e1; border-radius: 8px; border-left: 4px solid #ffc107; text-align: left;">
+                    <p style="font-size: 0.85rem; color: #5d4037; margin: 0;">
+                        <strong>Important Note:</strong> If the download doesn't start, it means your certificate hasn't been uploaded to the server yet. Please contact the Technical Support team if you believe this is an error.
+                    </p>
+                </div>
             `;
         }
+
+        // Allow searching by pressing Enter key
+        document.getElementById('cert-search').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                searchCertificate();
+            }
+        });
     </script>
 </body>
 </html>
