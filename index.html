@@ -181,167 +181,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Events Section */
-        .events {
-            padding: 5rem 2rem;
-            background: #fff;
-        }
-
-        .events h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--dark-blue);
-        }
-
-        .events-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            header { position: relative; padding: 1rem 0; }
-            .header-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .logo-left, .logo-right { justify-content: center; }
-            .header-logo, .header-center-img { height: 70px; }
-            .hero { padding-top: 2rem; min-height: auto; }
-            .hero h1 { font-size: 2.5rem; }
-        }
-
-        .event-card {
-            border: 1px solid #ddd;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .event-header {
-            background: var(--primary-blue);
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .event-header h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .event-details {
-            display: flex;
-            justify-content: space-around;
-            padding: 1.5rem;
-            background: var(--light-blue);
-            border-bottom: 1px solid #ddd;
-        }
-
-        .detail-item {
-            text-align: center;
-        }
-
-        .detail-item .label {
-            display: block;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: #666;
-            margin-bottom: 0.25rem;
-        }
-
-        .detail-item .value {
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-
-        .rules-section {
-            padding: 2rem;
-            flex-grow: 1;
-        }
-
-        .rules-section h4 {
-            color: var(--dark-blue);
-            border-bottom: 2px solid var(--primary-blue);
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-
-        .rules-section ul, .rules-section ol {
-            padding-left: 1.5rem;
-        }
-
-        .rules-section li {
-            margin-bottom: 0.75rem;
-        }
-
-        .levels-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .level-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-blue);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .level-item strong {
-            display: block;
-            color: var(--primary-blue);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .registration-cta {
-            padding: 2rem;
-            background: var(--light-blue);
-            text-align: center;
-        }
-
-        .countdown-timer {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--primary-blue);
-        }
-
-        .timer-display {
-            font-size: 1.3rem;
-            color: #d32f2f;
-            margin-top: 0.5rem;
-            font-weight: 900;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: var(--primary-blue);
-            color: #fff;
-            text-decoration: none;
-            padding: 0.75rem 2rem;
-            border-radius: 5px;
-            font-weight: 600;
-            margin-top: 1rem;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: var(--dark-blue);
-        }
-
         /* Certificate Portal Styling */
         .certificate-portal {
             padding: 5rem 2rem;
@@ -465,9 +304,9 @@
         }
 
         .winners-table th {
-            background: var(--primary-blue);
+            background: var(--dark-blue);
             color: #fff;
-            font-weight: 600;
+            font-family: 'Playfair Display', serif;
         }
 
         .winners-table tr:hover {
@@ -475,19 +314,41 @@
         }
 
         .valedictory-note {
-            margin-top: 2rem;
+            margin-top: 3rem;
             text-align: center;
-            font-style: italic;
-            color: #666;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: var(--dark-blue);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border: 2px solid #fff;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Gallery Styling */
+        .valedictory-note::before {
+            content: '🎊';
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .valedictory-note p {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+        }
+
+        /* Gallery Section */
         .gallery {
             padding: 5rem 2rem;
         }
 
         .gallery h2 {
             text-align: center;
+            font-size: 2.5rem;
             margin-bottom: 3rem;
         }
 
@@ -499,8 +360,8 @@
 
         .gallery-item {
             height: 250px;
-            border-radius: 10px;
             overflow: hidden;
+            border-radius: 10px;
             box-shadow: var(--shadow);
         }
 
@@ -515,18 +376,18 @@
             transform: scale(1.1);
         }
 
-        /* Footer Styling */
+        /* Footer */
         footer {
-            background: var(--navy-blue);
+            background: #1a1a1a;
             color: #fff;
-            padding: 4rem 2rem 0;
+            padding: 4rem 0 0;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
-            padding-bottom: 3rem;
+            margin-bottom: 3rem;
         }
 
         .footer-info h3, .footer-members h3, .footer-contact h3 {
@@ -539,10 +400,19 @@
         }
 
         .footer-bottom {
-            background: rgba(0,0,0,0.2);
-            padding: 1.5rem 0;
             text-align: center;
-            font-size: 0.9rem;
+            padding: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            .header-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .logo-left, .logo-right { justify-content: center; }
+            .header-logo, .header-center-img { height: 80px; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -552,7 +422,7 @@
             <div class="logo-left">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663596859077/MifRLgcaCSCemyTQ.png" alt="College Logo" class="header-logo">
             </div>
-            <div class="header-center">
+            <div class="logo-center">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663596859077/VHuFLOHuGfHyXlCb.png" alt="College Name and Affiliations" class="header-center-img">
             </div>
             <div class="logo-right">
@@ -563,16 +433,14 @@
 
     <main>
         <section class="hero">
-            <div class="container">
-                <p class="department-title">Department of Humanities and Sciences</p>
-                <h1>GURU'S ATHENAEUM</h1>
-                <p class="club-subtitle">English Literary Club</p>
-                <p class="main-slogan">"The limits of my language mean the limits of my world."</p>
-                <p class="embrace-slogan">Embrace the Art of Expression</p>
-            </div>
+            <p class="department-title">Department of Humanities and Sciences</p>
+            <h1>GURU'S ATHENAEUM</h1>
+            <p class="club-subtitle">English Literary Club</p>
+            <p class="main-slogan">"The limits of my language mean the limits of my world."</p>
+            <p class="embrace-slogan">Embrace the Art of Expression</p>
         </section>
 
-        <section class="benefits">
+        <section id="benefits" class="benefits">
             <div class="container">
                 <h2>Why Join Guru's Athenaeum?</h2>
                 <div class="benefits-grid">
@@ -595,122 +463,15 @@
             </div>
         </section>
 
-        <section id="events" class="events container">
-            <h2>Upcoming Events</h2>
-            <div class="events-grid">
-                
-                <!-- Ultimate Literary Challenge Card -->
-                <div class="event-card">
-                    <div class="event-header">
-                        <h3>The Ultimate Literary Challenge</h3>
-                        <p>A multi-level journey through language and expression.</p>
-                    </div>
-                    <div class="event-details">
-                        <div class="detail-item">
-                            <span class="label">Date</span>
-                            <span class="value">07 May 2026</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="label">Time</span>
-                            <span class="value">10:00 AM Onwards</span>
-                        </div>
-                    </div>
-                    <div class="rules-section">
-                        <h4>Challenge Levels</h4>
-                        <div class="levels-grid">
-                            <div class="level-item">
-                                <strong>Level 1: TABOO</strong>
-                                <p>Guess the object/device name from placards. (2 mins per card, 2 cards per team)</p>
-                            </div>
-                            <div class="level-item">
-                                <strong>Level 2: TONGUE TWISTERS</strong>
-                                <p>Master the twist! 5 twisters per team to test your articulation.</p>
-                            </div>
-                            <div class="level-item">
-                                <strong>Level 3: DUMB CHARADES</strong>
-                                <p>Act out movie titles without speaking for your partner to guess.</p>
-                            </div>
-                            <div class="level-item">
-                                <strong>Level 4: STORY NARRATION</strong>
-                                <p>Create a fiction or scientific story using 3 given words. (3 mins, 2 attempts)</p>
-                            </div>
-                            <div class="level-item">
-                                <strong>Level 5: SURPRISE LEVEL</strong>
-                                <p>To be revealed at the venue. Expect the unexpected!</p>
-                            </div>
-                            <div class="level-item">
-                                <strong>Level 6: SURPRISE LEVEL</strong>
-                                <p>The final showdown. Details will be revealed during the event.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="registration-cta">
-                        <h5>Are you ready for the challenge?</h5>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9ciFs2Cu8977-qCb4Xom5BhpZSP9H0tCmiK_o7s9BclJbmA/viewform?usp=header" class="btn-primary" id="btn-challenge" target="_blank">Register for the Challenge</a>
-                        <div class="countdown-timer">
-                            <p>Registration closes in:</p>
-                            <div class="timer-display" id="timer-challenge">00:00:00</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Certificate Portal Section -->
         <section id="certificates" class="certificate-portal">
             <div class="container">
                 <h2>E-Certificate Portal</h2>
                 <div class="search-container">
-                    <p>Enter your Roll Number to download your certificate.</p>
+                    <p class="search-hint">Enter your Roll Number to download your certificate.</p>
                     <input type="text" id="cert-search" class="search-input" placeholder="e.g. 21X01A0501">
-                    <p class="search-hint">Note: Ensure the roll number is entered correctly as per college records.</p>
-                    <button class="btn-primary" onclick="searchCertificate()">Search Certificate</button>
-                    
-                    <div id="certificate-result">
-                        <!-- Result will be injected here by JS -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Previous Events Section -->
-        <section id="previous-events" class="previous-events">
-            <div class="container">
-                <h2>Previous Events</h2>
-                <div class="prev-events-grid">
-                    <div class="prev-event-card">
-                        <span class="icon">📜</span>
-                        <h3>Poetry</h3>
-                    </div>
-                    <div class="prev-event-card">
-                        <span class="icon">📝</span>
-                        <h3>Documentation</h3>
-                    </div>
-                    <div class="prev-event-card">
-                        <span class="icon">♻️</span>
-                        <h3>Art from Waste</h3>
-                    </div>
-                    <div class="prev-event-card">
-                        <span class="icon">🏗️</span>
-                        <h3>Model Making</h3>
-                    </div>
-                    <div class="prev-event-card">
-                        <span class="icon">🦖</span>
-                        <h3>Wordzilla</h3>
-                    </div>
-                    <div class="prev-event-card">
-                        <span class="icon">🖼️</span>
-                        <h3>Poster Making</h3>
-                    </div>
-                    <div class="prev-event-card">
-                        <span class="icon">📊</span>
-                        <h3>PPT Presentation</h3>
-                    </div>
-                    <div class="prev-event-card">
-                        <span class="icon">🏛️</span>
-                        <h3>Mock Parliament</h3>
-                    </div>
+                    <button onclick="searchCertificate()" class="btn-primary" style="padding: 1rem 2rem; background: var(--primary-blue); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%;">Search Certificate</button>
+                    <div id="certificate-result"></div>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 1rem;">Note: Ensure the roll number is entered correctly as per college records.</p>
                 </div>
             </div>
         </section>
@@ -721,60 +482,30 @@
                 <table class="winners-table">
                     <thead>
                         <tr>
-                            <th>Event</th>
-                            <th>1st Place</th>
-                            <th>2nd Place</th>
-                            <th>3rd Place</th>
+                            <th>Event Name</th>
+                            <th>Winner Name</th>
+                            <th>Roll Number</th>
+                            <th>Prize</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Poetry Recitation</td>
-                            <td>Ananya</td>
-                            <td>R.Hasini</td>
-                            <td>Subha Mukthi</td>
+                            <td>Poetry Slam</td>
+                            <td>Jane Doe</td>
+                            <td>21X01A0501</td>
+                            <td>First Prize</td>
                         </tr>
                         <tr>
-                            <td>Documentation</td>
-                            <td>Charan tej</td>
-                            <td>S.Sahil</td>
-                            <td>Md.Toufeeq Ahmed</td>
-                        </tr>
-                        <tr>
-                            <td>Art from waste</td>
-                            <td>Anitha malik (ECE 1), ch.Bhargavi (ECE 1)</td>
-                            <td>k. nikhitha (ECE 2), G.Kalapana (ECE 2), G.Bindhu (ECE 2)</td>
-                            <td>G. Lavanya (IT 1), A.Chaithra (IT 1), D.Saisree ( IT 1)</td>
-                        </tr>
-                        <tr>
-                            <td>Wordzilla</td>
-                            <td>Ramavath Chandana (CSC 2), Amatul Zurien (CSD 1)</td>
-                            <td> ridima (CSD 3), pallavi(CSD 3) </td>
-                            <td>Praveen(CSD 3), Subha Mukti (CSD 3)</td>
-                        </tr>
-                        <tr>
-                            <td>PPT PRESENTATION</td>
-                            <td> Sharan Kumar(CSC-2)</td>
-                            <td> Vaishnavi (ECE-1)</td>
-                            <td>Vyshali (DS-1)         </td>
-                        </tr>
-                         <tr>
-                            <td>POSTER MAKING</td>
-                            <td>Mukthi  (CSD-3)</td>
-                            <td> Yashwanth  (CSC-2)</td>
-                            <td> Tanusree (CSE 3 ) , Anitha (ECE 1) </td>
-                        </tr>
-                         <tr>
-                            <td>MindScape</td>
-                            <td>Hasini (CSD-3), Deepika (CSD-3)</td>
-                            <td>V Finney Johnson (CSC-2),   Abhiram(CSC-2)</td>
-                            <td> Sai Charan (IT-1) , Sreekar (IT-1) </td>
+                            <td>Debate Competition</td>
+                            <td>John Smith</td>
+                            <td>21X01A0502</td>
+                            <td>Second Prize</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="valedictory-note">
-                <p>The winners shall be awarded during the valedictory ceremony.</p>
+                <p>The grand Valedictory Ceremony is scheduled for June 6, 2026, where we will celebrate the remarkable achievements of all our winners and honor their dedication to literary excellence.</p>
             </div>
         </section>
 
@@ -797,26 +528,11 @@
             </div>
             <div class="footer-members">
                 <h3>Club Members</h3>
-                <div class="member">
-                    <strong>Coordinator:</strong> Dr. K Muthulakshmi<br>
-                    Phone: 8838412831
-                </div>
-                <div class="member">
-                    <strong>President:</strong> N. Saideepthi<br>
-                    Phone: 9908608382<br>
-                </div>
-                <div class="member">
-                    <strong>Vice President:</strong> S. Charan Tej<br>
-                    Phone: 9346335136<br>
-                </div>
-                <div class="member">
-                    <strong>Secretary:</strong> Racharla Sumedha Sree<br>
-                    Phone: 7382309430<br>
-                </div>
-                <div class="member">
-                    <strong>Technical Support:</strong> M. Harshavardhan<br>
-                    Phone: 9014248652<br>
-                </div>
+                <div class="member"><strong>Coordinator:</strong> Dr. K Muthulakshmi<br>Phone: 8838412831</div>
+                <div class="member"><strong>President:</strong> N. Saideepthi<br>Phone: 9908608382</div>
+                <div class="member"><strong>Vice President:</strong> S. Charan Tej<br>Phone: 9346335136</div>
+                <div class="member"><strong>Secretary:</strong> Racharla Sumedha Sree<br>Phone: 7382309430</div>
+                <div class="member"><strong>Technical Support:</strong> M. Harshavardhan<br>Phone: 9014248652</div>
             </div>
             <div class="footer-contact">
                 <h3>Get in Touch</h3>
@@ -829,7 +545,6 @@
     </footer>
 
     <script>
-        // Certificate Search Logic
         function searchCertificate() {
             const input = document.getElementById('cert-search').value.trim();
             const resultDiv = document.getElementById('certificate-result');
@@ -839,64 +554,20 @@
                 return;
             }
 
-            // Convert spaces to underscores for file naming convention
             const fileName = input.replace(/\s+/g, '_');
             
-            // In a real static site, we can't check if file exists without a server
-            // So we provide the link and let the user try to download
             resultDiv.style.display = 'block';
             resultDiv.innerHTML = `
                 <div class="success-msg">
                     <p>Searching for: <strong>${input}</strong></p>
                     <p>If your certificate is ready, click the button below to download.</p>
-                    <a href="certificates/${fileName}.pdf" download class="btn-primary" style="background: #2e7d32; margin-top: 10px;">Download PDF Certificate</a>
+                    <a href="certificates/${fileName}.pdf" download class="btn-primary" style="background: #2e7d32; margin-top: 10px; display: inline-block; padding: 0.5rem 1rem; color: #fff; text-decoration: none; border-radius: 5px;">Download PDF Certificate</a>
                 </div>
                 <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">
                     Note: If the download fails, your certificate might not be uploaded yet or the roll number is incorrect.
                 </p>
             `;
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Target date: Tomorrow at 02:00 AM (May 07, 2026)
-            const targetDate = new Date('May 07, 2026 02:00:00').getTime();
-
-            function updateCountdownTimer() {
-                const now = new Date().getTime();
-                const timeRemaining = targetDate - now;
-
-                const timerChallenge = document.getElementById('timer-challenge');
-                const btnChallenge = document.getElementById('btn-challenge');
-
-                if (timeRemaining > 0) {
-                    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-                    const timeString = 
-                        (days > 0 ? days + "d " : "") + 
-                        String(hours).padStart(2, '0') + ":" + 
-                        String(minutes).padStart(2, '0') + ":" + 
-                        String(seconds).padStart(2, '0');
-
-                    if (timerChallenge) timerChallenge.textContent = timeString;
-                } else {
-                    const closedText = "REGISTRATIONS CLOSED";
-                    if (timerChallenge) timerChallenge.textContent = closedText;
-                    
-                    // Disable registration button
-                    if (btnChallenge) {
-                        btnChallenge.style.pointerEvents = "none";
-                        btnChallenge.style.background = "#ccc";
-                        btnChallenge.textContent = "Registration Closed";
-                    }
-                }
-            }
-
-            updateCountdownTimer();
-            setInterval(updateCountdownTimer, 1000);
-        });
     </script>
 </body>
 </html>
